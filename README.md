@@ -8,6 +8,7 @@ The following is a set of tutorials that are common to all our drones, that mean
 
 ## Catalog
 
-| Drone Name | Brief                                                                | Documentaion                          |
-|------------|----------------------------------------------------------------------|---------------------------------------|
-| Platypus   | Dry weight: <br>payload capacity:<br>Frame config: Octorotor Coaxial | [Platypus Docs](./platypus/README.md) |
+| Drone Name | Brief                                                                | Documentaion                              |
+|------------|----------------------------------------------------------------------|-------------------------------------------|
+| Platypus   | Dry weight: <br>payload capacity:<br>Frame config: Octorotor Coaxial | [Platypus Docs](./platypus/README.md)     |
+| Protoflyer |                                                                      | [Protoflyer Docs](./protoflyer/README.md) |
