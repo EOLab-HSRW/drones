@@ -20,10 +20,10 @@ export default defineConfig({
       {
         text: 'Drones catalog',
         items: [
-          { text: 'Platypus', link: './platypus/README' },
-          { text: 'SAR', link: './sar/README' },
-          { text: 'Protoflyer', link: './protoflyer/README' },
-          { text: 'Phoenix', link: './phoenix/README' },
+          { text: 'Platypus', link: '/platypus/README' },
+          { text: 'SAR', link: '/sar/README' },
+          { text: 'Protoflyer', link: '/protoflyer/README' },
+          { text: 'Phoenix', link: '/phoenix/README' },
         ]
       },
       {
