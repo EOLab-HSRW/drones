@@ -13,3 +13,4 @@ The following is a set of tutorials that are common to all our drones, that mean
 | SAR        |                                                                      | [SAR Docs](./sar/README.md)               |
 | Platypus   | Dry weight: <br>payload capacity:<br>Frame config: Octorotor Coaxial | [Platypus Docs](./platypus/README.md)     |
 | Protoflyer |                                                                      | [Protoflyer Docs](./protoflyer/README.md) |
+| Phoenix    |                                                                      | [Phoenix Docs](./phoenix/README.md)       |
