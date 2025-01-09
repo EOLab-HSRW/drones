@@ -4,7 +4,6 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "EOLab - Drones",
   description: "Documentation site on our drone platforms",
-  base: "https://eolab-hsrw.github.io/drones/",
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -24,6 +23,7 @@ export default defineConfig({
           { text: 'Platypus', link: './platypus/README' },
           { text: 'SAR', link: './sar/README' },
           { text: 'Protoflyer', link: './protoflyer/README' },
+          { text: 'Phoenix', link: './phoenix/README' },
         ]
       },
       {
