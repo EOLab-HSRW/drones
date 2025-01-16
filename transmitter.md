@@ -13,3 +13,13 @@
 | 6          | Flight mode switch | Changes the flight mode. Only for manual flights.                  |
 | 7          | reserved           | reserved                                                           |
 | 8          | Kill Switch        | ⚠️ Emergency Stop. The drone can fall from the sky if you use this. |
+
+
+## Flight Modes
+
+| (Physical) Switch Position | Mode                                                                  |
+|:--------------------------:|-----------------------------------------------------------------------|
+| 1                          | [Position](https://docs.px4.io/main/en/flight_modes_mc/position.html) |
+| unassigned                 | [Offboard](https://docs.px4.io/main/en/flight_modes/offboard)         |
+
+For more information check the PX4 documentation for [flight modes](https://docs.px4.io/main/en/flight_modes_mc/).
