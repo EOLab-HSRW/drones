@@ -11,8 +11,9 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Commons docs',
+        text: 'Commons Manual',
         items: [
+          { text: 'Introduction', link: '/common-manual/README'},
           { text: 'How to Flash Firmware', link: 'firmware'},
           { text: 'Mandatory Transmitter Settings', link: 'transmitter'},
         ]
