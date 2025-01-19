@@ -4,6 +4,8 @@
 
 - Payload
 - Wheelbase diameter: 115.2 cm
+- Total thrust by all the motors: 32000 (g)
+- Dry weight: ?? (Drone's weight without battery)
 
 
 ## Components
