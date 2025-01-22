@@ -20,12 +20,19 @@ export default defineConfig({
       },
       {
         text: 'Drones catalog',
+        collapsed: true,
         items: [
           { text: 'Platypus', link: '/platypus/README' },
           { text: 'SAR', link: '/sar/README' },
           { text: 'Protoflyer', link: '/protoflyer/README' },
           { text: 'Phoenix', link: '/phoenix/README' },
           { text: 'DJI NEO', link: '/dji-neo/README' },
+        ]
+      },
+      {
+        text: 'Components catalog',
+        collapsed: true,
+        items: [
         ]
       },
       {

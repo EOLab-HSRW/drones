@@ -7,7 +7,7 @@ EOLab's Drone System aims to provide a framework that serves as an umbrella to o
 
 > The [EOLab](https://www.eolab.de/) (Earth Observation Lab) is a laboratory of the [Rhine-Waal University of Applied Sciences (HSRW)](https://www.hochschule-rhein-waal.de/de) in Germany. It is part of the [Faculty of Communication and Environment](https://www.hochschule-rhein-waal.de/de/fakultaeten/kommunikation-und-umwelt), Campus Kamp-Lintfort.
 
-## Catalog
+## Drones
 
 | Drone Name                                                                                                                                       | Self-built | Quantity | Status               |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|:----------:|:--------:|----------------------|
@@ -25,6 +25,14 @@ EOLab's Drone System aims to provide a framework that serves as an umbrella to o
 | DJI Tello EDU <br> - [User Manual](https://dl-cdn.ryzerobotics.com/downloads/Tello/Tello%20User%20Manual%20v1.4.pdf)                             |            | 2?       | 🟢 Operational       |
 | DJI RoboMaster TT Tello Talent <br> - [User Manual](https://dl.djicdn.com/downloads/RoboMaster+TT/RoboMaster_TT_Tello_Talent_User_Manual_en.pdf) |            | ?        | 🟢 Operational       |
 | AR Drone 2.0                                                                                                                                     |            | 2        | 🟢 Operational       |
+
+## Components
+
+In our system, a "component" can be any extra device like a RC Controller or a payload that interact with the our drones. Our system components are designed to be combinable, so that they can be interchanged with any of our self-built drones, all the necessary parameters to integrate the component(s) into the drone are added in the drone firmware.
+
+| Component                                  | Quantity | Compatibility      |
+|--------------------------------------------|:--------:|--------------------|
+| Radiomaster TX16s (with ELRS radio module) | 1        | all (`self-built`) |
 
 ## Tutorials
 
