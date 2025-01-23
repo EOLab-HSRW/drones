@@ -30,9 +30,11 @@ EOLab's Drone System aims to provide a framework that serves as an umbrella to o
 
 In our system, a "component" can be any extra device like a RC Controller or a payload that interact with the our drones. Our system components are designed to be combinable, so that they can be interchanged with any of our self-built drones, all the necessary parameters to integrate the component(s) into the drone are added in the drone firmware.
 
-| Component                                  | Quantity | Compatibility      |
-|--------------------------------------------|:--------:|--------------------|
-| Radiomaster TX16s (with ELRS radio module) | 1        | all (`self-built`) |
+| Component                                                                                                                                                                                                                           | Quantity | Compatibility      |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|--------------------|
+| [Radiomaster TX16s (with ELRS radio module)](https://www.radiomasterrc.com/products/tx16s-mark-ii-radio-controller?variant=45864311685351)<br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/TX16S_1.pdf)  | 1        | all (`self-built`) |
+| [RP1 V2 Receiver (with external antenna)](https://www.radiomasterrc.com/products/rp1-expresslrs-2-4ghz-nano-receiver) <br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320) | 2?       | all (`self-buil`)  |
+| [RP2 V2 Receiver (with ceramic antenna)](https://www.radiomasterrc.com/products/rp2-expresslrs-2-4ghz-nano-receiver) <br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP2_User_Manual.pdf?v=1722923303)  | 2?       | all (`self-buil`)  |
 
 ## Tutorials
 
