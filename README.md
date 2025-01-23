@@ -18,12 +18,13 @@ EOLab's Drone System aims to provide a framework that serves as an umbrella to o
 | Octopus                                                                                                                                          | ✅         | 1        | 🟡 Under maintenance |
 | Mantis                                                                                                                                           | ✅         | 1        | 🟡 Under maintenance |
 | Cargo Drone                                                                                                                                      | ✅         | 1        | 🟡 Under maintenance |
-| DJI NEO <br> - [User Manual](https://dl.djicdn.com/downloads/neo/20240905/DJI_Neo_User_Manual_v1.0_en.pdf)                                       |            | 1        | 🟢 Operational       |
-| DJI Phantom 4 Pro <br> - [User Manual](https://dl.djicdn.com/downloads/phantom_4_pro/Phantom+4+Pro+Pro+Plus+User+Manual+v1.0.pdf)                |            | 1        | 🟢 Operational       |
-| DJI Mini 4 Pro <br> - [User Manual](https://dl.djicdn.com/downloads/DJI_Mini_4_Pro/DJI_Mini_4_Pro_User_Manual_EN.pdf)                            |            | 1        | 🟢 Operational       |
-| DJI Avata <br> - [User Manual](https://www.foto.no/media/multicase/documents/dji/dji%20avata%20user%20manual%20v1.06.pdf)                        |            | 1        | 🟢 Operational       |
 | DJI Tello EDU <br> - [User Manual](https://dl-cdn.ryzerobotics.com/downloads/Tello/Tello%20User%20Manual%20v1.4.pdf)                             |            | 2?       | 🟢 Operational       |
 | DJI RoboMaster TT Tello Talent <br> - [User Manual](https://dl.djicdn.com/downloads/RoboMaster+TT/RoboMaster_TT_Tello_Talent_User_Manual_en.pdf) |            | ?        | 🟢 Operational       |
+| DJI Phantom 4 Pro <br> - [User Manual](https://dl.djicdn.com/downloads/phantom_4_pro/Phantom+4+Pro+Pro+Plus+User+Manual+v1.0.pdf)                |            | 1        | 🟢 Operational       |
+| DJI NEO <br> - [User Manual](https://dl.djicdn.com/downloads/neo/20240905/DJI_Neo_User_Manual_v1.0_en.pdf)                                       |            | 1        | 🟢 Operational       |
+| DJI Mini 4 Pro <br> - [User Manual](https://dl.djicdn.com/downloads/DJI_Mini_4_Pro/DJI_Mini_4_Pro_User_Manual_EN.pdf)                            |            | 1        | 🟢 Operational       |
+| DJI Avata <br> - [User Manual](https://www.foto.no/media/multicase/documents/dji/dji%20avata%20user%20manual%20v1.06.pdf)                        |            | 1        | 🟢 Operational       |
+| DJI Mavic 3M <br> - [User Manual](https://dl.djicdn.com/downloads/DJI_Mavic_3_Enterprise/20221216/DJI_Mavic_3M_User_Manual-EN.pdf)               |            | 1        | 🟢 Operational       |
 | AR Drone 2.0                                                                                                                                     |            | 2        | 🟢 Operational       |
 
 ## Components
