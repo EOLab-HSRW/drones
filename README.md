@@ -33,9 +33,11 @@ In our system, a "component" can be any extra device like a RC Controller or a p
 
 | Component                                                                                                                                                                                                                           | Quantity | Compatibility      |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|--------------------|
-| [Radiomaster TX16s (with ELRS radio module)](https://www.radiomasterrc.com/products/tx16s-mark-ii-radio-controller?variant=45864311685351)<br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/TX16S_1.pdf)  | 1        | all (`self-built`) |
-| [RP1 V2 Receiver (with external antenna)](https://www.radiomasterrc.com/products/rp1-expresslrs-2-4ghz-nano-receiver) <br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320) | 2?       | all (`self-buil`)  |
-| [RP2 V2 Receiver (with ceramic antenna)](https://www.radiomasterrc.com/products/rp2-expresslrs-2-4ghz-nano-receiver) <br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP2_User_Manual.pdf?v=1722923303)  | 2?       | all (`self-buil`)  |
+| [Radiomaster TX16s (with ELRS radio module)](https://www.radiomasterrc.com/products/tx16s-mark-ii-radio-controller?variant=45864311685351)<br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/TX16S_1.pdf)  | 1        | only `self-builts` |
+| [RP1 V2 Receiver (with external antenna)](https://www.radiomasterrc.com/products/rp1-expresslrs-2-4ghz-nano-receiver) <br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP1_User_Manual.pdf?v=1722923320) | 2?       | only `self-builts`  |
+| [RP2 V2 Receiver (with ceramic antenna)](https://www.radiomasterrc.com/products/rp2-expresslrs-2-4ghz-nano-receiver) <br> - [User Manual](https://cdn.shopify.com/s/files/1/0609/8324/7079/files/RP2_User_Manual.pdf?v=1722923303)  | 2?       | only `self-builts`  |
+| [EMLID Reach RS3](https://emlid.com/reachrs3/) | 2 | for DJI drones |
+| [EMLID Reach RS2+](https://emlid.com/reachrs2plus/) | 2 | for DJI drones |
 
 ## Tutorials
 
