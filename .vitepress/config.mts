@@ -14,6 +14,7 @@ export default defineConfig({
         text: 'Commons Manual',
         items: [
           { text: 'Introduction', link: '/common-manual/README'},
+          { text: 'Mission Protocol', link: '/common-manual/mission-protocol'},
           { text: 'How to Flash Firmware', link: 'firmware'},
           { text: 'Mandatory Transmitter Settings', link: 'transmitter'},
         ]
