@@ -46,9 +46,3 @@ In our system, a "component" can be any extra device like a RC Controller or a p
 | Graupner Ultramat 18 (Graupner went bankrupt in 2012)<br> - [User Manual](https://www.manualslib.de/manual/51049/Graupner-Ultramat-18.html)                                                                                                                                                                                                                                                                                         | 1        |
 | [Voltcraft V-Charge 200 DUO](https://www.conrad.de/de/p/voltcraft-v-charge-200-duo-modellbau-multifunktionsladegeraet-12-v-230-v-10-a-blei-nimh-nicd-lipo-liion-lihv-blei-1539603.html)<br> - [User Manual](https://asset.conrad.com/media10/add/160267/c1/-/en/001539603ML02/upute-za-rukovanje-1539603-voltcraft-v-charge-200-duo-visenamjenski-punjac-baterija-za-modele-12-v-230-v-10-a-olovni-nikalj-metal-hidridni-nikal.pdf) | 1        |
 | iMax B6AC <br> - [User Manual](https://www.pololu.com/file/0j525/imaxb6acmanual.pdf)                                                                                                                                                                                                                                                                                                                                                | 1        |
-
-## Tutorials
-
-The following is a set of tutorials that are common to all our drones, that means that all the steps and procedures described in these tutorials are applicable to all our drones platforms.
-- [How to Flash Firmware](./firmware.md)
-- [Mandatory Transmitter Settings](./transmitter.md)
