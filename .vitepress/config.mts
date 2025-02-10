@@ -10,13 +10,7 @@ export default defineConfig({
     ],
 
     sidebar: [
-      {
-        text: 'Commons Manual',
-        items: [
-          { text: 'Introduction', link: '/common-manual/README'},
-          { text: 'Mandatory Transmitter Settings', link: 'transmitter'},
-        ]
-      },
+      { text: 'Common Manual', link: '/common-manual/README'},
       {
         text: 'Drones catalog',
         collapsed: true,
