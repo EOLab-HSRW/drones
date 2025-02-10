@@ -4,8 +4,6 @@ The following **Common Manual** contains a series of instructions, notes and gen
 
 [[toc]]
 
----
-
 ## How to Flash Firmware
 
 1. **Download the latest firmware**: Based on your drone name, get the latest available firmware from our [releases](https://github.com/EOLab-HSRW/drones-fw/releases). *For example*: `platypus`, download the `platypus_VERSION.px4` firmware file:
