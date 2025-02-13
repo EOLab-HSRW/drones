@@ -15,6 +15,7 @@ EOLab's Drone System aims to provide a framework that serves as an umbrella to o
 | [Platypus](./platypus/README.md)                                                                                                                 | ✅         | 1        | 🟡 Under maintenance |
 | [Protoflyer](./protoflyer/README.md)                                                                                                             | ✅         | ?        | 🟡 Under maintenance |
 | [Phoenix](./phoenix/README.md)                                                                                                                   | ✅         | 1        | 🟡 Under maintenance |
+| [Condor](./condor/README.md)                                                                                                                     | ✅         | 1        | 🟡 Under maintenance |
 | Octopus                                                                                                                                          | ✅         | 1        | 🟡 Under maintenance |
 | Mantis                                                                                                                                           | ✅         | 1        | 🟡 Under maintenance |
 | Cargo Drone                                                                                                                                      | ✅         | 1        | 🟡 Under maintenance |
