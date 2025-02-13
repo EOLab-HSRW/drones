@@ -38,7 +38,7 @@ export default defineConfig({
               {text: 'New', link: ''}
             ]
           },
-          { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/sar-drone/add.md', target: "_self"},
+          { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md', target: "_self"},
         ]
       }
     ],
