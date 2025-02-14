@@ -10,7 +10,18 @@ export default defineConfig({
     ],
 
     sidebar: [
-      { text: 'Common Manual', link: '/common-manual/README'},
+      { items: [{
+        text: 'Common Operational Manual',
+        link: '/common-operational-manual/README',
+        collapsed: false,
+        items: [
+          { text: 'How to Flash Firmware', link: '/common-operational-manual/flash-firmware'},
+          { text: 'How to Charge Batteries', link: '/common-operational-manual/charge-batteries'},
+          { text: 'Planning a Campaign', link: '/common-operational-manual/planning-campaign'},
+          { text: 'Transmitter Settings', link: '/common-operational-manual/transmitter-settings'},
+          { text: 'Flight Modes', link: '/common-operational-manual/flight-modes'},
+        ]
+      }]},
       {
         text: 'Drones catalog',
         collapsed: true,
@@ -39,6 +50,7 @@ export default defineConfig({
             ]
           },
           { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md', target: "_self"},
+          { text: 'Hardware Checks', link: '/development/hardware-checks'},
         ]
       }
     ],
