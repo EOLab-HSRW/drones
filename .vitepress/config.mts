@@ -50,7 +50,7 @@ export default defineConfig({
             ]
           },
           { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md', target: "_self"},
-          { text: 'Hardware Checks', link: '/development/hardware-checks'},
+          { text: 'Operational Setup', link: '/development/operational-setup'},
         ]
       }
     ],
