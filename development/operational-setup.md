@@ -1,0 +1,46 @@
+# Operatinal Setup
+
+How to get a new hardware operational
+
+[[toc]]
+
+## Create New Firmware Config
+
+The first step is to create the minimal functional set of file required to generate the firmware, please follow [Add a new firmware](https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md) to integrade the drone into our pipeline.
+
+Why building the firmware from source ?
+- Granular control on the firmware generation
+- enable drivers (mainly the CRSF driver for radio)
+- custom version tracking
+- custom airframe config; this allow for easy setup.
+
+## Motors Setup
+
+- Motor distribution and placement based on the drone airframe, see [PX4 Airframe Reference](https://docs.px4.io/main/en/airframes/airframe_reference.html).
+  - Set the right number of motors [`CA_ROTOR_COUNT`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CA_ROTOR_COUNT)
+  - Set motor geometry placement (w.r.t **center of mass**), see parameters:
+    - [`CA_ROTORn_PX`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CA_ROTOR0_PX)
+    - [`CA_ROTORn_PY`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CA_ROTOR0_PY)
+    - [`CA_ROTORn_PZ`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CA_ROTOR0_PZ)
+    - [`CA_ROTORn_KM`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CA_ROTOR0_KM)
+  - Set flight controller output assignment, see [`PWM_MAIN_FUNCn`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#PWM_MAIN_FUNC1)
+- ESCs Calibration values (only for PWM ESCs)
+  - TBA (parameters)
+
+  Checks:
+- Motor numbering and placement
+- Motor sping rotation acording to the airframe
+- Motor min. and max. spin values, see **from step 7 onwards** [https://docs.px4.io/main/en/advanced_config/esc_calibration.html](https://docs.px4.io/main/en/advanced_config/esc_calibration.html#steps)
+
+## Battery Setup
+
+## Sensors Setup
+
+## Radio and Flight Modes
+
+## Safety Configuration
+
+## Tunning
+
+
+[reference](https://docs.px4.io/main/en/advanced_config/)
