@@ -15,9 +15,10 @@
 | 8          | Kill Switch        | ⚠️ Emergency Stop. The drone can fall from the sky if you use this. |
 
 
-| (Physical) Switch Position | Mode                                                                  |
-|:--------------------------:|-----------------------------------------------------------------------|
-| 1                          | [Position](https://docs.px4.io/main/en/flight_modes_mc/position.html) |
-| unassigned                 | [Offboard](https://docs.px4.io/main/en/flight_modes/offboard)         |
+| (Physical) Switch Position | Mode                                                                                 |
+|:--------------------------:|--------------------------------------------------------------------------------------|
+| 1                          | [Position Slow Mode](https://docs.px4.io/main/en/flight_modes_mc/position_slow.html) |
+| 2                          | [Position](https://docs.px4.io/main/en/flight_modes_mc/position.html)                |
+| unassigned                 | [Offboard](https://docs.px4.io/main/en/flight_modes/offboard)                        |
 
 For more information check the PX4 documentation for [flight modes](https://docs.px4.io/main/en/flight_modes_mc/).
