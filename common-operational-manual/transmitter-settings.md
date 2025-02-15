@@ -22,3 +22,5 @@
 | unassigned                 | [Offboard](https://docs.px4.io/main/en/flight_modes/offboard)                        |
 
 For more information check the PX4 documentation for [flight modes](https://docs.px4.io/main/en/flight_modes_mc/).
+
+![Transmitter Mapping](/assets/radiomaster-tx16s-mapping.jpg)
