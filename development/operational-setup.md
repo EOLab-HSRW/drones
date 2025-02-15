@@ -14,6 +14,13 @@ Why building the firmware from source ?
 - custom version tracking
 - custom airframe config; this allow for easy setup.
 
+## Flight Controller Placement
+
+Follow: *"as close as possible to the centre-of-gravity (CoG), top-side up, and oriented so that the heading mark arrow points towards the front of the vehicle"*
+
+- Set the FMU position, see [`EKF2_IMU_POS_X`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_IMU_POS_X)
+- Set the FMU orientation, see [Flight Controller/Sensor Orientation](https://docs.px4.io/main/en/config/flight_controller_orientation.html) (only using GUI in QGC)
+
 ## Motors Setup
 
 - Motor distribution and placement based on the drone airframe, see [PX4 Airframe Reference](https://docs.px4.io/main/en/airframes/airframe_reference.html).
