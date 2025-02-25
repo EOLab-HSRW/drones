@@ -47,6 +47,7 @@ The folloeing image shows our setup for CRSF/ELRS radio settings in the radio tr
 | 7          | reserved           | reserved                                                           |
 | 8          | Kill Switch        | ⚠️ Emergency Stop. The drone can fall from the sky if you use this. |
 
+## Flight Modes Mapping
 
 | (Physical) Switch Position | Mode                                                                                 |
 |:--------------------------:|--------------------------------------------------------------------------------------|
@@ -55,6 +56,10 @@ The folloeing image shows our setup for CRSF/ELRS radio settings in the radio tr
 | unassigned                 | [Offboard](https://docs.px4.io/main/en/flight_modes/offboard)                        |
 
 For more information check the PX4 documentation for [flight modes](https://docs.px4.io/main/en/flight_modes_mc/).
+
+## Setup FMU Radio Settings
+
+From the FMU (Flight Management Unit) perspective all the necessary radio configurations are integrated directly into the firmware of our drones so no changes are necessary. You can find the radio configuration in the file [`rc.radiomaster_tx16s`](https://github.com/EOLab-HSRW/drones-fw/blob/main/ROMFS/px4fmu_common/init.d/rc.radiomaster_tx16s), this configuration is common for all our drones.
 
 ## External Resources
 
