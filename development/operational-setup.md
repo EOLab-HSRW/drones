@@ -51,6 +51,8 @@ Magnetometer:
 
 ## Radio and Flight Modes
 
+See the dedicate page [Radio Setup](/development/radio-setup).
+
 ## Safety Configuration
 
 ## Tunning
