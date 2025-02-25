@@ -38,3 +38,7 @@ In the main screen of the radio you should see that display the `EOLab Default` 
 ## Transmitter and Receiver
 
 connection. solid green light in the receiver...
+
+## How to Arm
+
+stick gesture...
