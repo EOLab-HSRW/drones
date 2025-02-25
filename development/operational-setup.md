@@ -39,6 +39,12 @@ Follow: *"as close as possible to the centre-of-gravity (CoG), top-side up, and 
 - Motor sping rotation acording to the airframe
 - Motor min. and max. spin values, see **from step 7 onwards** [https://docs.px4.io/main/en/advanced_config/esc_calibration.html](https://docs.px4.io/main/en/advanced_config/esc_calibration.html#steps)
 
+## Sensors Calibration
+
+Magnetometer:
+- [Mounting a Compass (or GNSS/Compass) ](https://docs.px4.io/main/en/assembly/mount_gps_compass.html)
+- [for large drones](https://docs.px4.io/main/en/config/compass.html#large-vehicle-calibration)
+
 ## Battery Setup
 
 ## Sensors Setup

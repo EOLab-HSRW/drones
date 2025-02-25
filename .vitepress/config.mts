@@ -51,6 +51,7 @@ export default defineConfig({
           },
           { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md', target: "_self"},
           { text: 'Operational Setup', link: '/development/operational-setup'},
+          { text: 'Radio Setup', link: '/development/radio-setup'},
         ]
       }
     ],
