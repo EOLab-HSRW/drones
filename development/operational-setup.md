@@ -19,7 +19,7 @@ Why building the firmware from source ?
 Follow: *"as close as possible to the centre-of-gravity (CoG), top-side up, and oriented so that the heading mark arrow points towards the front of the vehicle"*
 
 - Set the FMU position, see [`EKF2_IMU_POS_X`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_IMU_POS_X)
-- Set the FMU orientation, see [Flight Controller/Sensor Orientation](https://docs.px4.io/main/en/config/flight_controller_orientation.html) (only using GUI in QGC)
+- Set the FMU orientation, see [`SENS_BOARD_ROT`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_BOARD_ROT) or using QGC [Flight Controller/Sensor Orientation](https://docs.px4.io/main/en/config/flight_controller_orientation.html) (discourage)
 
 ## Motors Setup
 
