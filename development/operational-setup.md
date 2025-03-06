@@ -34,12 +34,11 @@ Follow: *"as close as possible to the centre-of-gravity (CoG), top-side up, and 
     - [`CA_ROTORn_KM`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CA_ROTOR0_KM)
   - Set flight controller output assignment, see [`PWM_MAIN_FUNCn`](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#PWM_MAIN_FUNC1)
 - ESCs Calibration values (only for PWM ESCs)
-  - TBA (parameters)
+  - Motor `PWM_MAIN_MINn`. and `PWM_MAIN_MAXn`, see offical docs **from step 7 onwards** [https://docs.px4.io/main/en/advanced_config/esc_calibration.html](https://docs.px4.io/main/en/advanced_config/esc_calibration.html#steps)
 
-  Checks:
+Checks:
 - Motor numbering and placement
 - Motor sping rotation acording to the airframe
-- Motor min. and max. spin values, see **from step 7 onwards** [https://docs.px4.io/main/en/advanced_config/esc_calibration.html](https://docs.px4.io/main/en/advanced_config/esc_calibration.html#steps)
 
 ## Sensors Calibration
 
