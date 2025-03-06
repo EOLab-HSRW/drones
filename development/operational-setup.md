@@ -4,9 +4,11 @@ How to get a new hardware operational
 
 [[toc]]
 
-## Create New Firmware Config
+## Flash Latest Firmware
 
-The first step is to create the minimal functional set of file required to generate the firmware, please follow [Add a new firmware](https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md) to integrade the drone into our pipeline.
+In case that the drone is already in our [catalog](https://drones.eolab.de/#drones), make sure to flash the latest version of the firmware, you can follow the page [How to Flash Firmware](https://drones.eolab.de/common-operational-manual/flash-firmware.html) for more information.
+
+If the plan is to integrate the drone into the catalog, the first step is to create the minimal functional set of file required to generate the firmware, please follow [Add a new firmware](https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md) to integrade the drone into our pipeline.
 
 Why building the firmware from source ?
 - Granular control on the firmware generation
