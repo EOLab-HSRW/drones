@@ -3,6 +3,8 @@
 > [!CAUTION]
 > Do not process to charge the batteries if you are not completely sure of the procedure. Incorrect handling of these devices can cause serious damage to the equipment and the operator.
 
+These instructions although they are inclined to how to charge our self-built drones battery packs, the recommendations and care mentioned are applicable to the commercial drones in our [catalog](/#drones) (like DJI drones). In case you want to charge any of the commercial platforms we have, please check our [catalog table](/#drones) to get the specific manual of that drone, there you will find the specific instructions how to charge the battery of that drone..
+
 ## Before to Start
 
 Make sure to read the manual of the charger that are planning to use, see the table [Misc Utils](/#misc-utils) to find the links to the manuals.
