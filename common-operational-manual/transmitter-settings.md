@@ -5,7 +5,7 @@ At EOLab we used to use the **Graupner MX-20 HoTT 2.4 GHz** radio, unfortunately
 Currently we exclusively use the [RadioMaster TX16S Mark II](https://www.radiomasterrc.com/collections/tx16s-mkii/products/tx16s-mark-ii-radio-controller) with an ELRS (ExpressLRS) built-in radio for all our self-built drones.
 
 > [!NOTE]
-> If you wish to configure a new radio, update the firmware or customize the functionalities follow the instructions on the page for developer: [Radio Setup](/development/radio-setup)
+> If you wish to configure a new radio, update the firmware or customize the functionalities follow the instructions on the page for maintainers: [Radio Setup](/maintainers/radio-setup)
 
 ## Overview
 

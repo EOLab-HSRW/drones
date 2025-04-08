@@ -13,6 +13,14 @@ export default defineConfig({
 
     sidebar: [
       { items: [{
+        text: 'Introduction',
+        link: '/introduction/README',
+        collapsed: false,
+        items: [
+          { text: 'Basic Concepts', link: 'https://docs.px4.io/main/en/getting_started/px4_basic_concepts.html'},
+        ]
+      }]},
+      { items: [{
         text: 'Common Operational Manual',
         link: '/common-operational-manual/README',
         collapsed: false,
@@ -22,6 +30,14 @@ export default defineConfig({
           { text: 'Planning a Campaign', link: '/common-operational-manual/planning-campaign'},
           { text: 'Transmitter Settings', link: '/common-operational-manual/transmitter-settings'},
           { text: 'Flight Modes', link: '/common-operational-manual/flight-modes'},
+        ]
+      }]},
+      { items: [{
+        text: 'Developers',
+        link: '/developers/README',
+        collapsed: false,
+        items: [
+          { text: 'Installation', link: ''},
         ]
       }]},
       {
@@ -42,7 +58,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Development',
+        text: 'Maintainers',
         items: [
           {
             text: 'Prerequisities',
@@ -52,8 +68,8 @@ export default defineConfig({
             ]
           },
           { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md', target: "_self"},
-          { text: 'Operational Setup', link: '/development/operational-setup'},
-          { text: 'Radio Setup', link: '/development/radio-setup'},
+          { text: 'Operational Setup', link: '/maintainers/operational-setup'},
+          { text: 'Radio Setup', link: '/maintainers/radio-setup'},
         ]
       }
     ],
