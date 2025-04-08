@@ -27,9 +27,9 @@ export default defineConfig({
         items: [
           { text: 'How to Flash Firmware', link: '/common-operational-manual/flash-firmware'},
           { text: 'How to Charge Batteries', link: '/common-operational-manual/charge-batteries'},
-          { text: 'Planning a Campaign', link: '/common-operational-manual/planning-campaign'},
           { text: 'Transmitter Settings', link: '/common-operational-manual/transmitter-settings'},
           { text: 'Flight Modes', link: '/common-operational-manual/flight-modes'},
+          { text: 'Planning a Campaign', link: '/common-operational-manual/planning-campaign'},
         ]
       }]},
       { items: [{
