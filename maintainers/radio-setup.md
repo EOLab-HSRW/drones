@@ -21,9 +21,9 @@ this configuration include:
 
 ## Bind Radio Transmitter and Receiver
 
-....
+Follow the offial tutorial for the [RadioMaster RP RX (series)](https://www.expresslrs.org/quick-start/receivers/radiomaster-rp-2400/).
 
-[Unique Phrase](https://www.expresslrs.org/quick-start/binding/)
+Aks Harley for [Unique Phrase](https://www.expresslrs.org/quick-start/binding/), to bind the transmitter and receiver.
 
 ## CRSF/ELRS Setup
 
