@@ -2,11 +2,14 @@
 
 ## Specs
 
-- Payload: 20 Kg
-- Wheelbase diameter: 161 cm
-- Total thrust by all the motors: 91734 g (15289 g per motor 12S 100% throttle)
-- Dry weight: ?? (Drone's weight without battery)
+|                                     |                           |
+|-------------------------------------|---------------------------|
+| Dry weight*                         |                           |
+| Payload Capacity                    | 20 Kg                     |
+| Wheelbase diameter                  | 161 cm                    |
+| Total thrust (at 12S 100% throttle) | 91 kfg (from motors spec) |
 
+*: Drone's weight without battery or payloads
 
 ## Components
 
@@ -24,3 +27,9 @@
 |-------------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-----------|----------------------|
 | `CONDOR-BATT-001` | 🟢 Operational | [Tattu Plus 1.0](https://genstattu.com/ta-plus1-0-15c-16000-12s1p-c-xt90.html)<br> - [User Manual](https://www.genstattu.com/content/TAA16KP12S15X.pdf) | 12S     | 16000 mAh | 15C                  |
 | `CONDOR-BATT-002` | 🟢 Operational | [Tattu Plus 1.0](https://genstattu.com/ta-plus1-0-15c-16000-12s1p-c-xt90.html)<br> - [User Manual](https://www.genstattu.com/content/TAA16KP12S15X.pdf) | 12S     | 16000 mAh | 15C                  |
+
+## Diagram
+
+| ![condor-diagram](./condor-diagram.jpg)   |
+|-------------------------------------------|
+| Connection Diagram for EOLab Condor Drone |
