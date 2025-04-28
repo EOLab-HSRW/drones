@@ -48,6 +48,7 @@ export default defineConfig({
           { text: 'SAR', link: '/sar/README' },
           { text: 'Protoflyer', link: '/protoflyer/README' },
           { text: 'Phoenix', link: '/phoenix/README' },
+          { text: 'Condor', link: '/condor/README' },
           { text: 'DJI NEO', link: '/dji-neo/README' },
         ]
       },
