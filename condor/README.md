@@ -16,13 +16,15 @@
 
 ## Components
 
-| Component   | Model                                                                          | Documentation                                                                                                    |
-|-------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| FMU         | [Hex Cube Black](https://docs.px4.io/main/en/flight_controller/pixhawk-2.html) | [The Cube Module Overview](https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview)            |
-| Motor       | [Hobbywing X8](https://www.hobbywing.com/en/products/xrotor-x8108)             | [User Manual](https://robu.in/wp-content/uploads/2023/08/x8-manual.pdf)                                          |
-| ESC         | Integrated as part of the motor. See motor user manual for more info.          | [User Manual](https://robu.in/wp-content/uploads/2023/08/x8-manual.pdf)                                          |
-| Props       | 29 Inch foldable prop                                                          | [User Manual](https://robu.in/wp-content/uploads/2023/08/x8-manual.pdf)                                          |
-| Rangefinder | [SF11/C](https://lightwarelidar.com/shop/sf11-c-100-m/) up to 100 meter range  | [Product Manual](https://www.documents.lightware.co.za/SF11%20-%20Laser%20Altimeter%20Manual%20-%20Rev%2010.pdf) |
+| Component   | Model                                                                                                                      | Documentation                                                                                                    |
+|-------------|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| FMU         | [Hex Cube Black](https://docs.px4.io/main/en/flight_controller/pixhawk-2.html)                                             | [The Cube Module Overview](https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview)            |
+| Motor       | [Hobbywing X8](https://www.hobbywing.com/en/products/xrotor-x8108)                                                         | [User Manual](https://robu.in/wp-content/uploads/2023/08/x8-manual.pdf)                                          |
+| ESC         | Integrated as part of the motor. See motor user manual for more info.                                                      | [User Manual](https://robu.in/wp-content/uploads/2023/08/x8-manual.pdf)                                          |
+| Props       | 29 Inch foldable prop                                                                                                      | [User Manual](https://robu.in/wp-content/uploads/2023/08/x8-manual.pdf)                                          |
+| Rangefinder | [SF11/C](https://lightwarelidar.com/shop/sf11-c-100-m/) up to 100 meter range                                              | [Product Manual](https://www.documents.lightware.co.za/SF11%20-%20Laser%20Altimeter%20Manual%20-%20Rev%2010.pdf) |
+| BEC         | [PM08-CAN 14S 200A](https://holybro.com/products/dronecan-pm08-power-module-14s-200a) by Holybro                           | [Docs - Setup](https://docs.holybro.com/power-module-and-pdb/power-module/dronecan-power-module-setup)           |
+| PDB         | [Power Distribution Board (PDB) 300A](https://holybro.com/products/power-distribution-board-pdb-300a-top-entry) by Holybro |                                                                                                                  |
 
 ## Batteries
 
