@@ -2,8 +2,17 @@
 
 ## Specs
 
-- Payload
-- Wheelbase diameter:
+|                                                   |                             |
+|---------------------------------------------------|-----------------------------|
+| Dry weight*                                       | 4 kg                        |
+| Payload Capacity                                  | ?? kg                       |
+| Wheelbase diameter                                | 0.9 cm                      |
+| Total thrust (at 22.2V, Prop 18*4, 100% throttle) | 2.95 kfg (from motors spec) |
+| Number of batteris                                | 2                           |
+| Battery                                           | 6S                          |
+| Individual battery weight                         | ?? kg                       |
+
+*: Drone's weight without battery or payloads
 
 
 ## Components
