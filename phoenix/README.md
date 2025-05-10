@@ -28,3 +28,7 @@
 | ![Phoenix Diagram](./phoenix-diagram.jpg)  |
 |--------------------------------------------|
 | Connection Diagram for EOLab Phoenix Drone |
+
+## Acknowledgment
+
+*This drone was acquired from [Drone4Agro](https://drone4agro.com/en) (Winfried Rijssenbeek) by [EOLab](https://www.eolab.de/) (part of [Lab3](https://www.hochschule-rhein-waal.de/en/faculties/communication-and-environment/laboratories/lab3)) at [Hochschule Rhein-Waal (HSRW)](https://www.hochschule-rhein-waal.de) within the framework of the [Emergency Drone](https://deutschland-nederland.eu/en/projects/emergency-drone/) project, funded by the [Interreg Germany-Netherlands](https://deutschland-nederland.eu/en/) programme. See [Drohnen als Lebensretter im Katastrophenfall](https://deutschland-nederland.eu/de/drohnen-als-lebensretter-im-katastrophenfall/) for a short description of the project objective.*
