@@ -20,9 +20,6 @@
 *: Drone's weight without battery or payloads
 **: Without payload and hovering
 
-*: Drone's weight without battery or payloads
-
-
 ## Components
 
 | Component   | Model               | Ref Link                                                                                                                                       | Documentation                                                                                                                                                     |
