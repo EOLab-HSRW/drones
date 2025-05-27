@@ -17,7 +17,7 @@
 | Individual battery weight                       | 4.8 kg                              |
 | Max. flight time**                              | 30 min                              |
 
-*: Drone's weight without battery or payloads
+*: Drone's weight without battery or payloads<br>
 **: Without payload and hovering
 
 ## Components
