@@ -15,6 +15,10 @@
 | Battery voltage                                        | 6S                                     |
 | Battery capacity                                       | 11000 mAh                              |
 | Individual battery weight                              | 1.35 kg                                |
+| Max. flight time**                                     | 14 min                                 |
+
+*: Drone's weight without battery or payloads
+**: Without payload and hovering
 
 *: Drone's weight without battery or payloads
 

@@ -2,12 +2,23 @@
 
 ## Specs
 
-|                      |                           |
-|----------------------|---------------------------|
-| Dry weight*          | 5.5 Kg                    |
-| Payload capacity     |                           |
-| Wheelbase diameter   | 115.2 cm                  |
-| Total thrust (at 6S) | 32 kfg (from motors spec) |
+|                                                |                                      |
+|------------------------------------------------|--------------------------------------|
+| Airframe configuration                         | Hexarotor X                          |
+| Wheelbase diameter                             | 1.15 m                               |
+| Dry weight*                                    | 5.5 kg                               |
+| Payload capacity                               |                                      |
+| Number of motors                               | 6                                    |
+| Total recommended thrust (at 6S 100% throttle) | YYY kfg (calculated from motor spec) |
+| Max. Total thrust (at 6S 100% throttle)        | YYY kfg (calculated from motor spec) |
+| Number of batteries                            | 2                                    |
+| Battery voltage                                | 6S (x2 parralel)                     |
+| Battery capacity                               | 10000 mAh                            |
+| Individual battery weight                      | 1.281 kg                             |
+| Max. flight time**                             | <to be measured> min                 |
+
+*: Drone's weight without battery or payloads
+**: Without payload and hovering
 
 *: Drone's weight without battery or payloads
 
