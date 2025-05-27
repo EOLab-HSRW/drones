@@ -4,8 +4,8 @@
 
 |                                                 |                                     |
 |-------------------------------------------------|-------------------------------------|
-| Configuration                                   | Hexarotor X                         |
-| Wheelbase diameter                              | 161 cm                              |
+| Airframe configuration                          | Hexarotor X                         |
+| Wheelbase diameter                              | 1.61 m                              |
 | Dry weight*                                     | 13.4 kg                             |
 | Payload Capacity                                | 20 kg                               |
 | Number of motors                                | 6                                   |
