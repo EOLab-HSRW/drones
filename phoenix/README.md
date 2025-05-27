@@ -15,7 +15,7 @@
 | Battery voltage                                | 6S (x2 parralel)                     |
 | Battery capacity                               | 10000 mAh                            |
 | Individual battery weight                      | 1.281 kg                             |
-| Max. flight time**                             | <to be measured> min                 |
+| Max. flight time**                             | (to be measured) min                 |
 
 *: Drone's weight without battery or payloads
 **: Without payload and hovering
