@@ -20,6 +20,10 @@
 *: Drone's weight without battery or payloads<br>
 **: Without payload and hovering
 
+| ![Condor dimensions](./condor-dimentions.png)
+|------------------------------------------------|
+| Overall dimensions                             |
+
 ## Components
 
 | Component   | Model                                                                                                                      | Documentation                                                                                                    |
