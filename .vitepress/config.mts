@@ -38,6 +38,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Installation', link: '/developers/install'},
+          { text: 'Takeoff and Land (demo)', link: '/developers/takeoff-and-land-demo'},
         ]
       }]},
       {
