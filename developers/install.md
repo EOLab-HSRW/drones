@@ -23,7 +23,7 @@ Our core system is under [`drones-ros2`](https://github.com/EOLab-HSRW/drones-ro
 Install system level dependencies:
 
 ```
-sudo apt install -y python3 git tmux
+sudo apt install -y python3 python3-pip git tmux
 ```
 
 Install our tool to hadled our drone catalog:
