@@ -29,7 +29,7 @@ sudo apt install -y python3 python3-pip git tmux
 Install our tool to hadled our drone catalog:
 
 ```
-sudo pip install vcstool git+https://github.com/EOLab-HSRW/drones-fw.git@main#egg=eolab_drones
+pip install vcstool git+https://github.com/EOLab-HSRW/drones-fw.git@main#egg=eolab_drones
 ```
 
 Setup the working workspace. Keep in mind that some step can take time to run just be patient.
