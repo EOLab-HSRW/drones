@@ -37,7 +37,7 @@ export default defineConfig({
         link: '/developers/README',
         collapsed: false,
         items: [
-          { text: 'Installation', link: ''},
+          { text: 'Installation', link: '/developers/install'},
         ]
       }]},
       {
