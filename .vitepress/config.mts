@@ -58,8 +58,10 @@ export default defineConfig({
         items: [
         ]
       },
-      {
+      { items: [{
         text: 'Maintainers',
+        link: '/maintainers/README',
+        collapsed: false,
         items: [
           {
             text: 'Prerequisities',
@@ -72,6 +74,7 @@ export default defineConfig({
           { text: 'Operational Setup', link: '/maintainers/operational-setup'},
           { text: 'Radio Setup', link: '/maintainers/radio-setup'},
         ]
+      }]
       }
     ],
 
