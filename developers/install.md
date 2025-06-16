@@ -4,11 +4,6 @@
 
 - **Operative system**: [Ubuntu 22.04 Desktop](https://releases.ubuntu.com/jammy/)
 - **Architecture**: amd64 or arm64
-- **ROS2**: Humble - [How to install](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
-
-The rationale behind these requirements:
-1. The world of robotics runs essentially on GNU/Linux based operating systems, so if you want to develop in the field what better than start using GNU/Linux?
-2. We want to enforce Tier 1 support. To minimize dependency problems with packages distributed as pre-compiled binaries we are going to stick to [REP-2000](https://www.ros.org/reps/rep-2000.html#humble-hawksbill-may-2022-may-2027) and only support the above mentioned operating system and architectures.
 
 Comments in possible scenarios:
 - Can I use dual-boot? yes.
@@ -20,27 +15,28 @@ Comments in possible scenarios:
 
 Our core system is under [`drones-ros2`](https://github.com/EOLab-HSRW/drones-ros2) and is design to help you easily bootstrap all the components required for developement.
 
-Install system level dependencies:
+> [!CAUTION]
+> Be aware: Running commands like the following **is extremely dangerous**, it is a gateway to running malicious code on your computer. You should never copy and paste commands you see on the internet without first inspecting them carefully and making sure you know what they do.
+
 
 ```
-sudo apt install -y python3 python3-pip git tmux
+curl -fsSL https://raw.githubusercontent.com/EOLab-HSRW/drones-ros2/refs/heads/main/install.sh | sh
 ```
 
-Install our tool to hadled our drone catalog:
+Enter the container:
 
 ```
-pip install vcstool git+https://github.com/EOLab-HSRW/drones-fw.git@main#egg=eolab_drones
+cd ~/eolab_ws/src/drones-ros2/ && apptainer run eolab.sif
 ```
 
-Setup the working workspace. Keep in mind that some step can take time to run just be patient.
+Build the workspace:
 
 ```
-mkdir -p ~/eolab_ws/src && cd ~/eolab_ws/src/
-git clone https://github.com/EOLab-HSRW/drones-ros2.git && cd drones-ros2
-vcs import < .repos
-eolab_drones build --type sitl --drone protoflyer --msgs-output ./px4_msgs
-cd ~/eolab_ws
-rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
-colcon build --symlink-install
+cd ~/eolab_ws/ && colcon build --symlink-install
+```
+
+Source the workspace:
+
+```
 source install/setup.bash
 ```
