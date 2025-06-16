@@ -32,7 +32,7 @@ cd ~/eolab_ws/src/drones-ros2/ && apptainer run eolab.sif
 Build the workspace:
 
 ```
-cd ~/eolab_ws/ && colcon build --symlink-install
+cd ~/eolab_ws/ && source ~/eolab_ws/install/setup.bash && colcon build --symlink-install
 ```
 
 Source the workspace:
