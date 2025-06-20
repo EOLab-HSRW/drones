@@ -23,20 +23,8 @@ Our core system is under [`drones-ros2`](https://github.com/EOLab-HSRW/drones-ro
 curl -fsSL https://raw.githubusercontent.com/EOLab-HSRW/drones-ros2/refs/heads/main/install.sh | sh
 ```
 
-Enter the container:
+Done. You should be able to enter the container with the following command:
 
 ```
 cd ~/eolab_ws/src/drones-ros2/ && apptainer run eolab.sif
-```
-
-Build the workspace:
-
-```
-cd ~/eolab_ws/ && source /opt/ros/humble/setup.bash && colcon build --symlink-install
-```
-
-Source the workspace:
-
-```
-source install/setup.bash
 ```
