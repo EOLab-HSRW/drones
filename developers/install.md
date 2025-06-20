@@ -11,7 +11,7 @@ Comments in possible scenarios:
 - Can I use a virtual machine? Technically yes but it is very problematic with the graphics drivers and you will experience problems with the simulations so it is not recommended to use virtual machine. But if you still want to try, go ahead and good luck.
 - Can I use a Mac: No! 😅.
 
-## Our System
+## Auto-Install (Recommended)
 
 Our core system is under [`drones-ros2`](https://github.com/EOLab-HSRW/drones-ros2) and is design to help you easily bootstrap all the components required for developement.
 
