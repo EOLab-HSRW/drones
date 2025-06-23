@@ -28,3 +28,11 @@ Done. You should be able to enter the container with the following command:
 ```
 cd ~/eolab_ws/src/drones-ros2/ && apptainer run eolab.sif
 ```
+
+## Manual Install (Experimental)
+
+```
+sudo apt install -y curl
+curl -fsSL https://eolab-hsrw.github.io/drones-ppa/helper/add-ppa.sh | bash
+```
+
