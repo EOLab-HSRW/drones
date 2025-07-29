@@ -89,5 +89,15 @@ export default defineConfig({
   rewrites: {
     // use the github README as entry point for the docs
     'README.md': 'index.md',
+    'common-operational-manual/': 'index.md',
+    'condor/README.md': 'condor/index.md',
+    'developers/README.md': 'developers/index.md',
+    'dji-neo/README.md': 'dji-neo/index.md',
+    'introduction/README.md': 'introduction/index.md',
+    'maintainers/README.md': 'maintainers/index.md',
+    'phoenix/README.md': 'phoenix/index.md',
+    'platypus/README.md': 'platypus/index.md',
+    'protoflyer/README.md': 'protoflyer/index.md',
+    'sar/README.md': 'sar/index.md',
   }
 })
