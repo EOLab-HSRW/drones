@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid({
   title: "EOLab - Drones",
   description: "Documentation site on our drone platforms",
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
@@ -38,8 +39,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Installation', link: '/developers/install'},
-          { text: 'Takeoff and Land (demo)', link: '/developers/takeoff-and-land-demo'},
-          { text: 'Precision Landing (demo)', link: '/developers/precision-landing-demo'},
+          { text: 'Takeoff and Land (Assignment)', link: '/developers/takeoff-and-land'},
+          { text: 'Precision Landing (Assignment)', link: '/developers/precision-landing'},
         ]
       }]},
       {
