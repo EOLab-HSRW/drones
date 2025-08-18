@@ -36,3 +36,47 @@ sudo apt install -y curl
 curl -fsSL https://eolab-hsrw.github.io/drones-ppa/helper/add-ppa.sh | bash
 ```
 
+
+
+## Manual Install
+
+1. Install ROS 2 Humble. Follow: [Install ROS Humble in Ubuntu 22.04](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
+
+2. Install QGroundControl. See []()
+
+3. Install dependencies:
+
+```
+sudo apt-get update && apt-get install -y curl git python3 python3-vcstoopython3-pip software-properties-common
+
+python3 -m pip install pip==22.0.2
+
+EASY_PX4_INSTALL_DEPS=false EASY_PX4_CLONE_PX4=false pip install git+https://github.com/EOLab-HSRW/drones-fw.git@main#egg=eolab_drones
+```
+
+4. Make a workspace:
+
+```
+mkdir -p ~/eolab_ws/src && cd ~/eolab_ws/src/
+```
+
+5. Git clone our repo
+
+```
+git clone https://github.com/EOLab-HSRW/drones-ros2.git
+cd drones-ros2
+git clone https://github.com/EOLab-HSRW/px4_msgs.git --branch protoflyer
+```
+
+```
+source /opt/ros/humble/setup.bash && cd ~/eolab_ws/src/drones-ros2/ && vcs import < .repos
+```
+
+6. Build image:
+
+```
+apptainer build eolab.sif eolab.def # later I'll change this with a pull operation from a container registry
+apptainer exec eolab.sif bash -c "source /opt/ros/humble/setup.bash && cd ~/eolab_ws/src/drones-ros2/ && vcs import < .repos"
+# apptainer exec eolab.sif bash -c "eolab_drones build --type sitl --drone protoflyer --msgs-output ~/eolab_ws/src/drones-ros2/px4_msgs"
+apptainer exec eolab.sif bash -c "source /opt/ros/humble/setup.bash && cd ~/eolab_ws/ && colcon build --symlink-install"
+```
