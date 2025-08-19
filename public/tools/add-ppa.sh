@@ -85,4 +85,4 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 echo -e "${GREEN}[+]${NC} Updating package lists..."
 sudo apt-get update -y
 
-echo -e "${GREEN}[✓]${NC} Setup complete."
+echo -e "${GREEN}[✓]${NC} PPA Sources Setup complete."
