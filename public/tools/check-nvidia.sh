@@ -501,6 +501,7 @@ if [[ $tk_rc -ne 0 ]]; then
               tk_rc=0
             else
               log_warn "CUDA toolkit still not detected after installation."
+              log_warn "Restart and run this script again to verify."
             fi
           else
             log_warn "CUDA toolkit installation failed."
