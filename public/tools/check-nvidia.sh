@@ -1,5 +1,5 @@
 #!/bin/bash
-# check-nvidia.sh — Detect NVIDIA GPU, driver & CUDA toolkit; optionally detect Jetson and install missing drivers or toolkit.
+# check-nvidia.sh — Detect NVIDIA GPU, driver & CUDA toolkit; optionally detect Jetson and install/align missing drivers or toolkit.
 #
 # This file of part of the EOLab Drones Ecosystem (drones.eolab.de) with
 # the home repository in: https://github.com/EOLab-HSRW/drones
@@ -28,18 +28,22 @@
 #     toolkit : Passes if the CUDA toolkit is available (nvcc + headers).
 #     all     : All of the above must pass (default).
 #
-#   If checks fail, this script can install the missing pieces:
+#   If checks fail, this script can install or align the missing pieces:
 #     - If the driver check fails:
 #         1) Fetch (temporarily) the Jetson detector:
 #            https://raw.githubusercontent.com/EOLab-HSRW/drones/refs/heads/main/public/tools/detect-jetson.sh
 #            to determine whether the system is a Jetson board.
 #         2) Depending on the result, OFFER to install drivers:
 #              - Jetson (Ubuntu for Jetson) using jetpack:     sudo apt-get install nvidia-jetpack
-#              - Non-Jetson Ubuntu (PC/Laptop):  sudo ubuntu-drivers autoinstall
+#              - Non-Jetson Ubuntu (PC/Laptop):                sudo ubuntu-drivers autoinstall
 #            Use --auto-install-driver to skip the prompt and proceed automatically.
 #            Use --assume-yes to pass -y to apt operations.
-#     - If the CUDA toolkit check fails (Ubuntu/Debian), OFFER to install from NVIDIA's APT repo
-#       (optionally pin a version with --cuda-version). Use --auto-install-cuda to skip the prompt.
+#     - If the CUDA toolkit check fails OR if the installed CUDA version does not match the desired version:
+#         * On Ubuntu/Debian, OFFER to:
+#              (a) remove any existing CUDA & related packages/dirs, then
+#              (b) install the desired version from NVIDIA's APT repo (optionally pin with --cuda-version).
+#           Use --auto-install-cuda to skip the prompts and proceed automatically.
+#         * On Jetson, CUDA is tied to JetPack/L4T; the script will not purge/replace it automatically.
 #
 #   Notes:
 #     - On WSL, the Windows host must provide the driver; this script will not install a Linux driver,
@@ -50,15 +54,15 @@
 #   --no-color             Disable colored diagnostics.
 #   --help                 Print this help and exit 0.
 #   --auto-install-driver  If driver is missing/broken, install without prompting (when supported).
-#   --auto-install-cuda    If toolkit is missing, install without prompting (when supported).
+#   --auto-install-cuda    If toolkit is missing or mismatched, align/install without prompting (when supported).
 #   --assume-yes           Non-interactive apt installs (-y).
-#   --cuda-version=V       Desired CUDA toolkit version (e.g., 12.4). Falls back to generic if unavailable.
+#   --cuda-version=V       Desired CUDA toolkit MAJOR.MINOR (e.g., 12.4). Version alignment uses this.
 #   --no-env               Do not append CUDA PATH/LD_LIBRARY_PATH to shell rc file.
 #   --rc-file=PATH         Shell rc file for env exports (default: ~/.bashrc).
 #
 # EXIT STATUS
-#   0  Check(s) passed (or post-install best-effort succeeded).
-#   1  Check(s) failed or install skipped/failed.
+#   0  Check(s) passed (or post-install best-effort succeeded and desired CUDA version is present).
+#   1  Check(s) failed or install/alignment skipped/failed.
 #   2  Usage error / unknown option.
 #   >2 Unexpected error; a diagnostic is printed to stderr.
 #
@@ -66,7 +70,7 @@
 #   # Simple check with summary
 #   ./check-nvidia.sh all
 #
-#   # Auto-fix drivers and toolkit if missing (Ubuntu/Jetson)
+#   # Auto-fix drivers and align CUDA version (Ubuntu/Jetson)
 #   ./check-nvidia.sh --auto-install-driver --auto-install-cuda --assume-yes --cuda-version=12.4
 #
 #   # Source to reuse functions
@@ -86,7 +90,7 @@ USE_COLOR=true
 AUTO_INSTALL_DRIVER=false
 AUTO_INSTALL_CUDA=false
 ASSUME_YES=false
-CUDA_VERSION=""
+CUDA_VERSION="12.4" # harley: this is the CUDA version with more (devices) platform coverage
 WRITE_ENV=true
 RC_FILE="${HOME}/.bashrc"
 
@@ -217,14 +221,31 @@ env_descriptor() {
   if is_wsl; then echo "WSL (Windows Subsystem for Linux) detected"; fi
 }
 
+# --------------------------- Version alignment helpers ---------------------------
+
+normalize_cuda_mm() {
+  # Normalize a CUDA version string to MAJOR.MINOR (e.g., 12.5.1 -> 12.5)
+  local v="${1:-}"
+  [[ -z "$v" ]] && return 1
+  awk -F. '{printf "%d.%d\n",$1,($2==""?0:$2)}' <<<"$v"
+}
+
+cuda_version_matches_desired() {
+  local cur="${1:-}" des="${2:-}"
+  [[ -z "$cur" || -z "$des" ]] && return 1
+  [[ "$(normalize_cuda_mm "$cur")" == "$(normalize_cuda_mm "$des")" ]]
+}
+
 # --------------------------- Jetson detection (runtime fetch) ---------------------------
 
 detect_jetson_runtime() {
   # Returns 0 if Jetson is detected by the upstream script, 1 otherwise.
   local url="https://raw.githubusercontent.com/EOLab-HSRW/drones/refs/heads/main/public/tools/detect-jetson.sh"
+
+  # create temp file and capture its path into the trap *at definition time*
   local tmp
   tmp="$(mktemp -t detect-jetson.XXXXXX.sh)"
-  trap 'rm -f "$tmp" || true' RETURN
+  trap "rm -f '$tmp' 2>/dev/null || true" RETURN
 
   log_info "Fetching Jetson detector from upstream (https://drones.eolab.de/tools/detect-jetson.sh)"
   if have_cmd curl; then
@@ -252,7 +273,7 @@ detect_jetson_runtime() {
   fi
 }
 
-# --------------------------- Installers ---------------------------
+# --------------------------- Installers / Cleanup ---------------------------
 
 install_drivers_ubuntu_pc() {
   local apt_y=()
@@ -273,37 +294,116 @@ install_drivers_jetson() {
   log_ok "Jetson driver/toolchain installation invoked (reboot usually required)."
 }
 
+remove_cuda_toolkit_deb() {
+  # Purge CUDA/toolkit/cuDNN/TensorRT/NCCL packages and remove /usr/local/cuda* dirs (Ubuntu/Debian).
+  # On Jetson, refuse automatic purge to avoid breaking L4T.
+  if detect_jetson_runtime; then
+    log_warn "Jetson detected — automatic CUDA purge is disabled. Manage versions via 'nvidia-jetpack' / L4T."
+    return 1
+  fi
+
+
+  local apt_y=()
+  $ASSUME_YES && apt_y+=("-y")
+
+  local WSL=false
+  if is_wsl; then WSL=true; fi
+
+  # Base patterns (exact package names as printed by `dpkg -l`)
+  local pattern='^(cuda(-.*)?|cuda-toolkit(-[0-9]+-[0-9]+)?|nvidia-cuda-toolkit|libcudnn.*|libnccl.*|libnvinfer.*|nvidia-cuda-dev.*|nvidia-cublas.*|nvidia-cudnn.*)$'
+  # On WSL we also nuke any accidental driver meta-package to keep the system clean
+
+  $WSL && pattern="^(cuda-drivers.*|${pattern#^})"
+
+  # Build package list safely into an array
+  mapfile -t pkgs < <(dpkg -l 2>/dev/null | awk '/^ii/ {print $2}' | grep -E "$pattern" || true)
+
+  if ((${#pkgs[@]})); then
+    log_info "Purging existing CUDA & related packages: ${pkgs[*]}"
+    sudo apt-get purge "${apt_y[@]}" "${pkgs[@]}" || true
+    sudo apt-get autoremove "${apt_y[@]}" --purge || true
+  else
+    log_info "No CUDA-related packages currently installed (nothing to purge)."
+  fi
+
+  # Remove /usr/local/cuda* safely
+  if [[ -d /usr/local ]]; then
+    [[ -L /usr/local/cuda ]] && sudo rm -f /usr/local/cuda || true
+    for d in /usr/local/cuda-*; do
+      [[ -d "$d" ]] && sudo rm -rf "$d"
+    done
+  fi
+
+  log_ok "Previous CUDA installations cleaned up."
+  return 0
+}
+
 install_cuda_toolkit_deb() {
-  # Ubuntu/Debian toolkit install from NVIDIA repo
+  # Ubuntu/Debian toolkit install from NVIDIA repo (WSL-aware) + source RC after install.
   local version="${1:-}"
   local apt_y=()
   $ASSUME_YES && apt_y+=("-y")
 
+  local WSL=false
+  if is_wsl; then WSL=true; fi
+
   if [[ -r /etc/os-release ]]; then . /etc/os-release; fi
+  local OS_TOKEN=""
   case "${ID:-}" in
-    ubuntu) OS_TOKEN="ubuntu${VERSION_ID//./}" ;;
-    debian) OS_TOKEN="debian${VERSION_ID%%.*}" ;;
-    *) log_warn "Unsupported distro for automatic CUDA install. Please install manually."; return 1 ;;
+    ubuntu)
+      if $WSL; then
+        OS_TOKEN="wsl-ubuntu"
+        log_info "WSL detected — using CUDA WSL-Ubuntu repo and toolkit-only meta-packages (no Linux driver)."
+      else
+        OS_TOKEN="ubuntu${VERSION_ID//./}"
+      fi
+      ;;
+    debian)
+      # No dedicated WSL repo for Debian; use regular Debian stream.
+      OS_TOKEN="debian${VERSION_ID%%.*}"
+      ;;
+    *)
+      log_warn "Unsupported distro for automatic CUDA install. Please install manually."
+      return 1
+      ;;
   esac
 
   local base="https://developer.download.nvidia.com/compute/cuda/repos/${OS_TOKEN}/x86_64"
   local keydeb="/tmp/cuda-keyring.deb"
 
   log_info "Adding NVIDIA CUDA APT repo (${base})…"
+  # Try keyring from selected repo; if WSL-Ubuntu doesn’t host it, fall back to matching Ubuntu repo.
   if ! curl -fsSL "${base}/cuda-keyring_1.1-1_all.deb" -o "$keydeb" 2>/dev/null; then
-    if ! wget -qO "$keydeb" "${base}/cuda-keyring_1.0-1_all.deb"; then
-      log_warn "Failed to download cuda-keyring package."
-      return 1
+    if [[ "$OS_TOKEN" == "wsl-ubuntu" ]]; then
+      local UB="ubuntu${VERSION_ID//./}"
+      if ! curl -fsSL "https://developer.download.nvidia.com/compute/cuda/repos/${UB}/x86_64/cuda-keyring_1.1-1_all.deb" -o "$keydeb" 2>/dev/null; then
+        curl -fsSL "https://developer.download.nvidia.com/compute/cuda/repos/${UB}/x86_64/cuda-keyring_1.0-1_all.deb" -o "$keydeb" || {
+          log_warn "Failed to download cuda-keyring package for WSL."
+          return 1
+        }
+      fi
+    else
+      curl -fsSL "${base}/cuda-keyring_1.0-1_all.deb" -o "$keydeb" || {
+        log_warn "Failed to download cuda-keyring package."
+        return 1
+      }
     fi
   fi
+
   sudo dpkg -i "$keydeb"
   sudo apt-get update "${apt_y[@]}"
 
+  # Pick the *toolkit-only* metapackage (never 'cuda' or 'cuda-drivers' on WSL2).
   local pkg="cuda-toolkit"
   if [[ -n "$version" ]]; then
     local maj="${version%%.*}"
     local min="${version#*.}"
     pkg="cuda-toolkit-${maj}-${min}"
+  fi
+
+  if $WSL; then
+    # Guard against driver meta packages getting pulled in by mistake on WSL2.
+    sudo apt-mark hold cuda-drivers nvidia-driver-* || true
   fi
 
   log_info "Installing CUDA toolkit package: ${pkg}"
@@ -316,6 +416,7 @@ install_cuda_toolkit_deb() {
     fi
   fi
 
+  # Ensure env block exists (for future shells)
   if $WRITE_ENV; then
     local MARK="# >>> CUDA toolkit environment (added by check-nvidia.sh) >>>"
     if ! grep -Fq "$MARK" "$RC_FILE" 2>/dev/null; then
@@ -328,13 +429,80 @@ install_cuda_toolkit_deb() {
         echo 'fi'
         echo "# <<< CUDA toolkit environment <<<"
       } >> "$RC_FILE"
-      log_ok "Appended CUDA env to ${RC_FILE}. Run: source '${RC_FILE}'"
+      log_ok "Appended CUDA env to ${RC_FILE}."
     else
       log_info "CUDA env block already present in ${RC_FILE}; skipping."
     fi
   fi
 
+  # Load env *now* for this process and (if possible) for the caller
+  if [[ -d /usr/local/cuda ]]; then
+    export CUDA_HOME=/usr/local/cuda
+    export PATH="$CUDA_HOME/bin:$PATH"
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$CUDA_HOME/lib64"
+  fi
+
+  # Try to source the RC file so interactive sessions that sourced this script get the env immediately.
+  if [[ -r "$RC_FILE" ]]; then
+    # shellcheck disable=SC1090
+    . "$RC_FILE" || true
+    log_ok "Reloaded shell environment from ${RC_FILE}."
+  fi
+
+  # If not sourced, remind user (we cannot modify the parent shell’s env from a child process).
+  if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    if [[ -n "${PS1:-}" && $- == *i* ]]; then
+      log_info "Open a new shell or run: source '${RC_FILE}' to use CUDA immediately in this session."
+    fi
+  fi
+
   return 0
+}
+
+align_cuda_toolkit_version_if_needed() {
+  # If CUDA is present and version != desired, ask to purge and install desired.
+  local desired="${1:-}"
+  local current
+  current="$(nvcc_version)"
+
+  if [[ -z "$current" ]]; then
+    # Nothing to align (no nvcc)
+    return 1
+  fi
+  if [[ -z "$desired" ]]; then
+    log_info "Desired CUDA version not provided; skipping alignment."
+    return 0
+  fi
+
+  if cuda_version_matches_desired "$current" "$desired"; then
+    log_ok "CUDA toolkit version ${current} matches desired ${desired}."
+    return 0
+  fi
+
+  log_warn "CUDA toolkit version mismatch: found ${current}, desired ${desired}."
+  if ask_yes_no_cuda "Remove existing CUDA toolkit ${current} and install ${desired} now?"; then
+    if remove_cuda_toolkit_deb; then
+      if install_cuda_toolkit_deb "$desired"; then
+        if check_toolkit_nvcc && check_toolkit_headers && cuda_version_matches_desired "$(nvcc_version)" "$desired"; then
+          log_ok "CUDA toolkit ${desired} is now installed."
+          # TODO: source bashrc
+          return 0
+        else
+          log_warn "CUDA toolkit still not detected or mismatched after installation."
+          return 1
+        fi
+      else
+        log_warn "CUDA toolkit installation failed."
+        return 1
+      fi
+    else
+      log_warn "CUDA cleanup failed or was skipped (Jetson)."
+      return 1
+    fi
+  else
+    log_info "CUDA version alignment skipped by user."
+    return 1
+  fi
 }
 
 # --------------------------- Summary ---------------------------
@@ -353,6 +521,7 @@ print_summary() {
   echo -e " GPU check        : $([[ $gpu_rc -eq 0 ]] && echo -e "${GREEN}PASS${NC}" || echo -e "${RED}FAIL${NC}")" >&2
   echo -e " Driver check     : $([[ $drv_rc -eq 0 ]] && echo -e "${GREEN}PASS${NC}" || echo -e "${RED}FAIL${NC}")" >&2
   echo -e " Toolkit check    : $([[ $tk_rc  -eq 0 ]] && echo -e "${GREEN}PASS${NC}" || echo -e "${RED}FAIL${NC}")" >&2
+  echo -e " Desired CUDA     : ${CUDA_VERSION:-n/a}" >&2
   echo -e " Driver version   : ${dver:-n/a}" >&2
   echo -e " CUDA (driver max): ${cdrv:-n/a}" >&2
   echo -e " nvcc version     : ${nvv:-n/a}" >&2
@@ -485,35 +654,44 @@ if [[ $drv_rc -ne 0 ]]; then
   fi
 fi
 
-# If we just installed Jetson drivers via nvidia-jetpack, toolkit may now be present.
-if [[ $tk_rc -ne 0 ]]; then
-  if check_toolkit_nvcc && check_toolkit_headers; then
-    tk_rc=0
-  else
-    # Offer toolkit install (Ubuntu/Debian); allowed also in WSL
-    if ask_yes_no_cuda "Install CUDA toolkit$([[ -n "$CUDA_VERSION" ]] && echo " ($CUDA_VERSION)") now?"; then
-      if [[ -r /etc/os-release ]]; then . /etc/os-release; fi
-      case "${ID:-}" in
-        ubuntu|debian)
-          if install_cuda_toolkit_deb "${CUDA_VERSION}"; then
-            if check_toolkit_nvcc && check_toolkit_headers; then
-              log_ok "CUDA toolkit is now present."
-              tk_rc=0
-            else
-              log_warn "CUDA toolkit still not detected after installation."
-              log_warn "Restart and run this script again to verify."
-            fi
-          else
-            log_warn "CUDA toolkit installation failed."
-          fi
-          ;;
-        *)
-          log_warn "Automatic CUDA installation is only implemented for Ubuntu/Debian. Please install manually."
-          ;;
-      esac
+# CUDA toolkit handling:
+# 1) If toolkit present, ensure the version matches desired; if not, offer purge+install.
+# 2) If toolkit absent, offer to install desired; perform cleanup first to avoid conflicts.
+
+if [[ $tk_rc -eq 0 ]]; then
+  # Present — check and align version if needed.
+  if ! cuda_version_matches_desired "$(nvcc_version)" "$CUDA_VERSION"; then
+    if align_cuda_toolkit_version_if_needed "$CUDA_VERSION"; then
+      tk_rc=0
     else
-      log_info "CUDA toolkit installation skipped by user."
+      tk_rc=1
     fi
+  fi
+else
+  # Not present — offer installation (with pre-cleanup).
+  if ask_yes_no_cuda "Install CUDA toolkit$([[ -n "$CUDA_VERSION" ]] && echo " ($CUDA_VERSION)") now?"; then
+    if [[ -r /etc/os-release ]]; then . /etc/os-release; fi
+    case "${ID:-}" in
+      ubuntu|debian)
+        # Clean up any partial/conflicting remnants before installing.
+        remove_cuda_toolkit_deb || true
+        if install_cuda_toolkit_deb "${CUDA_VERSION}"; then
+          if check_toolkit_nvcc && check_toolkit_headers && cuda_version_matches_desired "$(nvcc_version)" "$CUDA_VERSION"; then
+            log_ok "CUDA toolkit is now present and matches ${CUDA_VERSION}."
+            tk_rc=0
+          else
+            log_warn "CUDA toolkit still not detected or version mismatch after installation."
+          fi
+        else
+          log_warn "CUDA toolkit installation failed."
+        fi
+        ;;
+      *)
+        log_warn "Automatic CUDA installation is only implemented for Ubuntu/Debian. Please install manually."
+        ;;
+    esac
+  else
+    log_info "CUDA toolkit installation skipped by user."
   fi
 fi
 
