@@ -421,6 +421,8 @@ install_cuda_toolkit_deb() {
     local MARK="# >>> CUDA toolkit environment (added by check-nvidia.sh) >>>"
     if ! grep -Fq "$MARK" "$RC_FILE" 2>/dev/null; then
       {
+        # FIX: Add CPATH to get #include <cuda_runtime.h>: https://github.com/NVIDIA/nccl/issues/131#issuecomment-557546609
+        # export CPATH=/usr/local/cuda-10.1/targets/x86_64-linux/include:$CPATH
         echo "$MARK"
         echo 'if [ -d /usr/local/cuda ]; then'
         echo '  export CUDA_HOME=/usr/local/cuda'
