@@ -657,32 +657,39 @@ if [[ $drv_rc -ne 0 ]]; then
 fi
 
 # CUDA toolkit handling:
-# 1) If toolkit present, ensure the version matches desired; if not, offer purge+install.
+# 1) Pass if toolkit is present (nvcc + headers), regardless of version mismatch.
 # 2) If toolkit absent, offer to install desired; perform cleanup first to avoid conflicts.
+# 3) Only try to align versions if explicitly requested via --auto-install-cuda.
+# ---------------------------------------------------------------------------------------------------------------
 
 if [[ $tk_rc -eq 0 ]]; then
-  # Present — check and align version if needed.
-  if ! cuda_version_matches_desired "$(nvcc_version)" "$CUDA_VERSION"; then
-    if align_cuda_toolkit_version_if_needed "$CUDA_VERSION"; then
+  # Toolkit is present; warn (non-fatal) on version mismatch
+  if [[ -n "${CUDA_VERSION:-}" ]] && ! cuda_version_matches_desired "$(nvcc_version)" "$CUDA_VERSION"; then
+    log_warn "CUDA toolkit version mismatch: found $(nvcc_version), desired ${CUDA_VERSION}. Proceeding because CUDA is available."
+    if $AUTO_INSTALL_CUDA; then
+      # Best-effort alignment when explicitly requested; never change exit status if CUDA is present
+      align_cuda_toolkit_version_if_needed "$CUDA_VERSION" || \
+        log_warn "CUDA alignment attempt failed; continuing since CUDA is present."
+      # Regardless of alignment outcome, tk_rc remains 0 to keep this non-fatal
       tk_rc=0
-    else
-      tk_rc=1
     fi
   fi
 else
-  # Not present — offer installation (with pre-cleanup).
+  # Not present — offer installation (with pre-cleanup), since lack of CUDA is fatal for 'toolkit'/'all'
   if ask_yes_no_cuda "Install CUDA toolkit$([[ -n "$CUDA_VERSION" ]] && echo " ($CUDA_VERSION)") now?"; then
     if [[ -r /etc/os-release ]]; then . /etc/os-release; fi
     case "${ID:-}" in
       ubuntu|debian)
-        # Clean up any partial/conflicting remnants before installing.
         remove_cuda_toolkit_deb || true
         if install_cuda_toolkit_deb "${CUDA_VERSION}"; then
-          if check_toolkit_nvcc && check_toolkit_headers && cuda_version_matches_desired "$(nvcc_version)" "$CUDA_VERSION"; then
-            log_ok "CUDA toolkit is now present and matches ${CUDA_VERSION}."
+          if check_toolkit_nvcc && check_toolkit_headers; then
+            # If installed but version doesn't match, still pass and warn
+            if [[ -n "${CUDA_VERSION:-}" ]] && ! cuda_version_matches_desired "$(nvcc_version)" "$CUDA_VERSION"; then
+              log_warn "CUDA installed, but version mismatch remains: found $(nvcc_version), desired ${CUDA_VERSION}. Proceeding because CUDA is available."
+            fi
             tk_rc=0
           else
-            log_warn "CUDA toolkit still not detected or version mismatch after installation."
+            log_warn "CUDA toolkit still not detected after installation."
           fi
         else
           log_warn "CUDA toolkit installation failed."
