@@ -331,34 +331,16 @@ install_cudnn_deb() {
   local y=()
   $ASSUME_YES && y+=("-y")
 
-  # Ensure NVIDIA CUDA apt repo is present (same flow you use for CUDA)
-  local OS_TOKEN
-  case "${ID:-}" in
-    ubuntu) OS_TOKEN="ubuntu${VERSION_ID//./}" ;;
-    debian) OS_TOKEN="debian${VERSION_ID%%.*}" ;;
-  esac
-  if ! apt-cache policy | grep -q "developer.download.nvidia.com/compute/cuda"; then
-    local base="https://developer.download.nvidia.com/compute/cuda/repos/${OS_TOKEN}/x86_64"
-    local keydeb="/tmp/cuda-keyring.deb"
-    curl -fsSL "${base}/cuda-keyring_1.1-1_all.deb" -o "$keydeb" 2>/dev/null || \
-    wget -qO "$keydeb" "${base}/cuda-keyring_1.0-1_all.deb"
-    sudo dpkg -i "$keydeb"
-    sudo apt-get update "${y[@]}"
-  fi
-
-  # Choose package family (CUDA >= 12 → libcudnn9, else libcudnn8)
-  local pkgs
-  if command -v nvcc >/dev/null 2>&1; then
-    local cv; cv=$(nvcc --version | sed -n 's/.*release \([0-9][0-9]*\)\..*/\1/p' | head -n1)
-    if [[ "${cv:-12}" -ge 12 ]]; then pkgs="libcudnn9 libcudnn9-dev"; else pkgs="libcudnn8 libcudnn8-dev"; fi
+  if need_apt; then
+    log_info "Installing cuDNN (nvidia-cudnn)…"
+    sudo apt update
+    sudo apt install "${y[@]}" nvidia-cudnn
+    sudo ldconfig
+    log_ok "cuDNN installed."
   else
-    pkgs="libcudnn9 libcudnn9-dev"
+    log_warn "cuDNN install via apt is supported only on Ubuntu/Debian."
+    return 1
   fi
-
-  log_info "Installing cuDNN packages: ${pkgs}"
-  sudo apt-get install "${y[@]}" ${pkgs}
-  sudo ldconfig
-  log_ok "cuDNN installed."
 }
 
 # --------------------------- Step 3: Install build dependencies ---------------------------
