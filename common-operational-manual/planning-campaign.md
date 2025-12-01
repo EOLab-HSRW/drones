@@ -5,3 +5,4 @@
 
 Check our template format for planning campaigns: [Mission Planning (template)](https://docs.google.com/document/d/1gdN9ebnTEY66zqJBIfyZLmIBJGGOQ38saH6_vEyxmEk/edit?usp=sharing)
 
+As extra resource see: [UAV Mapping Guidelines - by Humanitarian OpenStreetMap Team (HOT)](https://uav-guidelines.openaerialmap.org/)
