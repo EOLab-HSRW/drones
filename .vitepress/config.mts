@@ -61,6 +61,15 @@ export default withMermaid({
         items: [
         ]
       },
+      {
+        items: [{
+          text: 'Technical articles',
+          collapsed: true,
+          items: [
+            { text: 'Multi-Drone Sim', link: '/technical-articles/larasim2025'},
+          ]
+        }]
+      },
       { items: [{
         text: 'Maintainers',
         link: '/maintainers/README',
