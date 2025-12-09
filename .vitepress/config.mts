@@ -6,6 +6,9 @@ export default withMermaid({
   title: "EOLab - Drones",
   description: "Documentation site on our drone platforms",
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  markdown: {
+    math: true
+  },
   themeConfig: {
     logo: "https://wiki.eolab.de/lib/exe/fetch.php?media=eolab-logo-minimal.png",
     nav: [
