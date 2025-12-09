@@ -109,8 +109,6 @@ For a batch of 1,000 multirotors, the simulator achieves an average step time of
 
 For a batch of $$< 1{,}000$$ multirotors, the simulator shows some peaks, which can be due to the effect of GPU kernel launch overhead at relatively small problem sizes: the GPU cannot be fully saturated, and fixed overhead dominates execution time.
 
-![Average simulation step time for a set of 50 trials per batch.](images/performance_runtime.png)
-
 
 ## 4. Conclusion
 
