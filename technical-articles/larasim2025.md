@@ -21,8 +21,6 @@ Several popular simulators highlight these trade-offs. AirSim [@shahAirSimHighFi
 
 In this work, we present a batch-parallel GPU multirotor simulator that combines physically-grounded dynamics with massive parallelism. By leveraging the Taichi programming language (Taichi-lang) [@huTaichiLanguageHighperformance2019], we are able to achieve high-performance GPU acceleration while remaining independent of specific vendor toolchains. This design choice avoids the constraints of CUDA- or vendor-specific implementations, ensuring broader portability across heterogeneous computing platforms. The result is a simulator that can evolve thousands of independent multirotor instances in parallel and in real time. This capability enables applications such as large-scale reinforcement learning pipeline, validation of control schemes which are infeasible with traditional CPU-bound simulators.
 
-![Parallel simulation of 1000 UAVs.](images/1000-drones.png)
-
 
 ## 2. Methodology
 
