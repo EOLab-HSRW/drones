@@ -47,22 +47,18 @@ export default withMermaid({
         ]
       }]},
       {
-        text: 'Drones catalog',
-        collapsed: true,
-        items: [
-          { text: 'Platypus', link: '/platypus/README' },
-          { text: 'SAR', link: '/sar/README' },
-          { text: 'Protoflyer', link: '/protoflyer/README' },
-          { text: 'Phoenix', link: '/phoenix/README' },
-          { text: 'Condor', link: '/condor/README' },
-          { text: 'DJI NEO', link: '/dji-neo/README' },
-        ]
-      },
-      {
-        text: 'Components catalog',
-        collapsed: true,
-        items: [
-        ]
+        items: [{
+          text: 'Drones catalog',
+          collapsed: true,
+          items: [
+            { text: 'Platypus', link: '/platypus' },
+            { text: 'SAR', link: '/sar/README' },
+            { text: 'Protoflyer', link: '/protoflyer' },
+            { text: 'Phoenix', link: '/phoenix' },
+            { text: 'Condor', link: '/condor' },
+            { text: 'DJI NEO', link: '/dji-neo' },
+          ]
+        }],
       },
       {
         items: [{
@@ -73,10 +69,19 @@ export default withMermaid({
           ]
         }]
       },
+      {
+        items: [{
+          text: 'Experiments',
+          collapsed: true,
+          items: [
+            { text: 'Mesh Network', link: '/experiments/mesh'},
+          ]
+        }]
+      },
       { items: [{
         text: 'Maintainers',
-        link: '/maintainers/README',
-        collapsed: false,
+        link: '/maintainers/',
+        collapsed: true,
         items: [
           {
             text: 'Prerequisities',
@@ -88,6 +93,15 @@ export default withMermaid({
           { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md', target: "_self"},
           { text: 'Operational Setup', link: '/maintainers/operational-setup'},
           { text: 'Radio Setup', link: '/maintainers/radio-setup'},
+          {
+            text: 'Design Docs',
+            collapsed: true,
+            link: '/maintainers/design/index.md',
+            items: [
+              {text: 'PX4 and ROS 2', link: '/maintainers/design/px4-and-ros.md'},
+              {text: 'Autopilots (firmware)', link: '/maintainers/design/autopilots.md'},
+            ]
+          },
         ]
       }]
       }

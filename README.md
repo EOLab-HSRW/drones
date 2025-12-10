@@ -11,11 +11,11 @@ EOLab's Drone System aims to provide a framework that serves as an umbrella to o
 
 | Drone Name                                                                                                                                       | Self-built | Quantity | Status               |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|:----------:|:--------:|----------------------|
-| [SAR](./sar/README.md)                                                                                                                           | ✅         | 1        | 🟡 Under test |
-| [Platypus](./platypus/README.md)                                                                                                                 | ✅         | 1        | 🟡 Under test |
-| [Protoflyer](./protoflyer/README.md)                                                                                                             | ✅         | ?        | 🟡 Under test |
-| [Phoenix](./phoenix/README.md)                                                                                                                   | ✅         | 1        | 🟡 Under test |
-| [Condor](./condor/README.md)                                                                                                                     | ✅         | 1        | 🟡 Under test |
+| [SAR](./sar/)                                                                                                                           | ✅         | 1        | 🟡 Under test |
+| [Platypus](./platypus/)                                                                                                                 | ✅         | 1        | 🟡 Under test |
+| [Protoflyer](./protoflyer/)                                                                                                             | ✅         | ?        | 🟡 Under test |
+| [Phoenix](./phoenix/)                                                                                                                   | ✅         | 1        | 🟡 Under test |
+| [Condor](./condor/)                                                                                                                     | ✅         | 1        | 🟡 Under test |
 | Octopus                                                                                                                                          | ✅         | 1        | 🟡 Under maintenance |
 | Mantis                                                                                                                                           | ✅         | 1        | 🟡 Under maintenance |
 | Cargo Drone                                                                                                                                      | ✅         | 1        | 🟡 Under maintenance |
