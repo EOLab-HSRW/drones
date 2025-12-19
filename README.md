@@ -3,7 +3,7 @@
 EOLab's Drone System aims to provide a framework that serves as an umbrella to operate all our self-built drones. In this documentation you will find all the necessary resources for: specifications of our drones, 3D models for reference, operation manuals and general conventions used in all our platforms.
 
 > [!IMPORTANT]
-> If you are new, the best way to start is reading the ➡️ [Introduction](/introduction) ⬅️ for these docs.
+> If you are new, the best way to start is reading the ➡️ [Introduction](/introduction/README.md) ⬅️ for these docs.
 
 > The [EOLab](https://www.eolab.de/) (Earth Observation Lab) is a laboratory of the [Rhine-Waal University of Applied Sciences (HSRW)](https://www.hochschule-rhein-waal.de/de) in Germany. It is part of the [Faculty of Communication and Environment](https://www.hochschule-rhein-waal.de/de/fakultaeten/kommunikation-und-umwelt), Campus Kamp-Lintfort.
 
