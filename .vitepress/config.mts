@@ -18,7 +18,7 @@ export default withMermaid({
     sidebar: [
       { items: [{
         text: 'Introduction',
-        link: '/introduction/README',
+        link: '/introduction/',
         collapsed: false,
         items: [
           { text: 'Basic Concepts', link: 'https://docs.px4.io/main/en/getting_started/px4_basic_concepts.html'},
@@ -114,7 +114,6 @@ export default withMermaid({
     'condor/README.md': 'condor/index.md',
     'developers/README.md': 'developers/index.md',
     'dji-neo/README.md': 'dji-neo/index.md',
-    'introduction/README.md': 'introduction/index.md',
     'maintainers/README.md': 'maintainers/index.md',
     'phoenix/README.md': 'phoenix/index.md',
     'platypus/README.md': 'platypus/index.md',
