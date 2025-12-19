@@ -83,16 +83,10 @@ export default withMermaid({
         link: '/maintainers/',
         collapsed: true,
         items: [
-          {
-            text: 'Prerequisities',
-            collapsed: true,
-            items: [
-              {text: 'New', link: ''}
-            ]
-          },
           { text: 'Add a new firmware', link: 'https://github.com/EOLab-HSRW/drones-fw/blob/main/add.md', target: "_self"},
           { text: 'Operational Setup', link: '/maintainers/operational-setup'},
           { text: 'Radio Setup', link: '/maintainers/radio-setup'},
+          { text: 'Known Issues and Limitations ', link: '/maintainers/issues-and-limitations'},
           {
             text: 'Design Docs',
             collapsed: true,

@@ -8,6 +8,8 @@ This is a note to myself, to my colleagues and to the future of the EOLab System
 
 This section presents all the pieces of the EOLab Drone System infrastructure. Note that it is not intended to provide detailed insights into the motivations behind the system's design decisions. For a complete rationale and a detailed walkthrough of why the system is structured the way it is, see the [Design Docs](https://drones.eolab.de/maintainers/design/) section.
 
+![System Overview](/maintainers/readme-assets/system-overview.png)
+
 ## Historical Background
 
 By 2020 the [Drone Lab (Drohnenlabor) at HSRW](https://www.hochschule-rhein-waal.de/de/fakultaeten/kommunikation-und-umwelt/labore/drohnenlabor) was already established with some previous projects involving drones, such as [Smart Inspectors (INTERREG IV A)](https://www.hochschule-rhein-waal.de/de/fakultaeten/kommunikation-und-umwelt/forschungsprojekte/smart-inspectors) and [SPECTORS (INTERREG Va, 2016-2020)](https://www.hochschule-rhein-waal.de/de/fakultaeten/life-sciences/forschung/bodenkunde-und-pflanzenernaehrung/forschungsprojekte/spectors) to mention a few, and there was cool people working with drones at HSRW like [Moritz Prüm](https://www.hochschule-rhein-waal.de/de/user/8603), Winfried Rijssenbeek, Marcel Dogotari, Rolf Becker and more (see [SPECTORS Team](https://spectors.eu/wordpress/team/)).

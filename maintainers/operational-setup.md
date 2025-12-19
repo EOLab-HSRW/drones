@@ -4,6 +4,18 @@ How to get a new hardware operational
 
 [[toc]]
 
+## Mechanical Checks
+
+- Frame integrity: No cracks or any other mechanical defect
+- Structural Symmetry: check for arm symmetry, measure diagonals from motor to motor to ensure symmetrical geometry.
+- Screw and Bolt Tightness: Make sure all the screw and bolts are fully thight
+- Motor mount: check for no play on the motor mounts
+- Landing gear
+- Propeller Clearance
+- Component Mounting (non-electrical): Brackets, antenna mounts, and accessory holders should be tight and aligned.
+
+## Electrical Checks
+
 ## Flash Latest Firmware
 
 In case that the drone is already in our [catalog](https://drones.eolab.de/#drones), make sure to flash the latest version of the firmware, you can follow the page [How to Flash Firmware](/common-operational-manual/flash-firmware.html) for more information.
