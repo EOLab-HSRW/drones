@@ -92,8 +92,8 @@ export default withMermaid({
             collapsed: true,
             link: '/maintainers/design/index.md',
             items: [
+              {text: 'PX4 and ROS 2', link: '/maintainers/design/px4-and-ros.md'},
               {text: 'Autopilots (firmware)', link: '/maintainers/design/autopilots.md'},
-              {text: 'PX4 and ROS 2', link: '/maintainers/design/px4-and-ros2.md'},
             ]
           },
         ]
