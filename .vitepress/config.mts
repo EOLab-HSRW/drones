@@ -52,9 +52,10 @@ export default withMermaid({
           collapsed: true,
           items: [
             { text: 'Platypus', link: '/platypus' },
-            { text: 'SAR', link: '/sar/README' },
+            { text: 'SAR', link: '/sar' },
             { text: 'Protoflyer', link: '/protoflyer' },
             { text: 'Phoenix', link: '/phoenix' },
+            { text: 'Pegasus', link: '/pegasus' },
             { text: 'Condor', link: '/condor' },
             { text: 'DJI NEO', link: '/dji-neo' },
           ]
@@ -119,5 +120,6 @@ export default withMermaid({
     'platypus/README.md': 'platypus/index.md',
     'protoflyer/README.md': 'protoflyer/index.md',
     'sar/README.md': 'sar/index.md',
+    'pegasus/README.md': 'pegasus/index.md',
   }
 })
