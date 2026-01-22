@@ -2462,7 +2462,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer No." ""
+		(property "Manufacturer No." "XT30UPB-F"
 			(at 154.94 111.76 0)
 			(effects
 				(font
@@ -3102,7 +3102,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer No." ""
+		(property "Manufacturer No." "XT30UPB-F"
 			(at 154.94 93.98 0)
 			(effects
 				(font
@@ -3634,7 +3634,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer No." ""
+		(property "Manufacturer No." "XT90PW-M"
 			(at 115.57 97.79 0)
 			(effects
 				(font
