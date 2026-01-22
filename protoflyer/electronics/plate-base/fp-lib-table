@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "motor-solder-pad")(type "KiCad")(uri "${KIPRJMOD}/motor-solder-pad.pretty")(options "")(descr ""))
+  (lib (name "ecad-sym-and-footprints")(type "KiCad")(uri "${KIPRJMOD}/ecad-sym-and-footprints")(options "")(descr ""))
+)

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "B3B-XH-A")(type "KiCad")(uri "${KIPRJMOD}/ecad-sym-and-footprints/B3B-XH-A.kicad_sym")(options "")(descr ""))
+)
