@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------|----------------------------------------|
 | Airframe configuration                                             | Hexarotor X                            |
 | Wheelbase diameter                                                 | 0.8 m                                  |
-| Dry weight*                                                        | TBA                                    |
+| Dry weight*                                                        | 2.9 kg                                    |
 | Payload capacity                                                   | TBA                                    |
 | Number of motors                                                   | 6                                      |
 | Total recommended thrust (at 4S, Prop 10x4.7 (APC), 100% throttle) | 4.62 kfg (estimated from HP4108-480KV) |
