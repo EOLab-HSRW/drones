@@ -43,7 +43,7 @@ Does the battery appear to be in good condition with no physical damage (includi
 |-------------------------------------------------------------------------|
 | Use the balancer cables to check for the individual voltage cells       |
 
-Are the voltages in the recommended range for the battery type? Yes: continue. No: stop, do not charge that battery.
+Are the voltages in the recommended range for the battery type (e.g. LiPo is 4.2V-3.4V **per cell**)? Yes: continue. No: stop, do not charge that battery.
 
 4. Get the relavant battery charging parameters. These values depend on the battery you plan to charge take as an example the following battery:
 
