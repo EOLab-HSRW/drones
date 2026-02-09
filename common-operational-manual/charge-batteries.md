@@ -53,8 +53,8 @@ Are the voltages in the recommended range for the battery type (e.g. LiPo is 4.2
 
 To proceed with the charging of a battery you need to know:
 - Number of cells (integer unit): How many cell are in the pack. In this battery 6S.
-- **CHARGING RATE** (integer unit)!! (no the Discharging Rate) CAREFUL !!: For most commercial batteries the charging rate is 1C. ⚠️ Never charge the battery with a charging rate higher than 1C.
-- Battery capacit (Milliampere-hour): 5000 mAh 
+- **CHARGING RATE** (integer unit)!! (not the Discharging Rate) CAREFUL !!: For most commercial batteries the charging rate is 1C. ⚠️ Never charge the battery with a charging rate higher than 1C.
+- Battery capacity (Milliampere-hour): 5000 mAh 
 
 5. Connect the balancer cable (1) and the main battery line (2) to the charger:
 
