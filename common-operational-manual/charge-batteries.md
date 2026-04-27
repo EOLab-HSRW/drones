@@ -3,7 +3,7 @@
 > [!CAUTION]
 > Do not process to charge the batteries if you are not completely sure of the procedure. Incorrect handling of these devices can cause serious damage to the equipment and the operator.
 
-These instructions although they are inclined to how to charge our self-built drones battery packs, the recommendations and care mentioned are applicable to the commercial drones in our [catalog](/#drones) (like DJI drones). In case you want to charge any of the commercial platforms we have, please check our [catalog table](/#drones) to get the specific manual of that drone, there you will find the specific instructions how to charge the battery of that drone..
+These instructions although they are inclined to how to charge our self-built drones battery packs, the recommendations and care mentioned are applicable to the commercial drones in our [catalog](/#drones) (like DJI drones). In case you want to charge any of the commercial platforms we have, please check our [catalog table](/#drones) to get the specific manual of that drone, there you will find the specific instructions how to charge the battery of that drone.
 
 ## Before to Start
 
@@ -88,9 +88,46 @@ In the Ultramat 18 charger you start charging by long pressing the START/ENTER b
 > [!CAUTION]
 > Never leave the battery unattended during charging, always keep an eye on it in case of problems.
 
-## Post-Charging
+9. Once the charger indicates that the charging process is complete, stop the charging program if required by the charger.
 
-TBA
+> [!CAUTION]
+> Do not disconnect the battery while the charger is still actively charging. Always make sure the charging process has finished or has been safely stopped.
 
-- LiPo Guard ()
-- Storage in the right cabinet
+10. Disconnect the battery from the charger in a safe order:
+- 1. Disconnect the main battery connector from the charging cable.
+- 2. Disconnect the balancer cable from the charging board/charger.
+- 3. Disconnect the charging cable and balancer board from the charger if they are no longer needed.
+
+> [!WARNING]
+> Never allow the battery terminals or charging cable connectors to touch each other. This can cause a short circuit, fire, or permanent battery damage.
+
+11. Let the battery cool down before using it, transporting it, or storing it.
+
+The battery should not feel hot after charging. If the battery is unusually hot, swollen, leaking, damaged, or smells abnormal, do not use it.
+
+> [!CAUTION]
+> A swollen, damaged, overheating, or suspicious battery must be considered unsafe. Place it in a safe fire-resistant area and inform the responsible person.
+
+12. Verify the final battery voltage using a battery checker.
+
+For LiPo batteries, a fully charged cell is usually around **4.2 V per cell**. Make sure the cell voltages are balanced and within the expected range for the battery type.
+
+13. If the battery will be used soon, place it in a **LiPo Guard**, fire-resistant bag, or approved battery transport container until it is installed in the drone.
+
+14. If the battery will not be used soon, do not store it fully charged. Use the charger’s **storage mode** to bring the battery to the recommended storage voltage. See section [Battery Storage](#battery-storage) for indications.
+
+## Battery Storage
+
+**For LiPo batteries**, the recommended storage voltage is usually around **3.7 V to 3.85 V per cell**.
+
+> [!NOTE]
+> Storing LiPo batteries fully charged or fully discharged for long periods can reduce battery life and increase the risk of battery damage.
+
+Store the battery in the correct battery storage cabinet located in our lab `02 02 505` (HSRW Kamp-Lintfort).
+
+Do not store batteries connected to drones, chargers, charging boards, or cables.
+
+If the battery showed any abnormal behavior during charging, label it clearly and do not return it to normal use until it has been inspected.
+
+> [!WARNING]
+> Never use or store damaged batteries together with healthy batteries.

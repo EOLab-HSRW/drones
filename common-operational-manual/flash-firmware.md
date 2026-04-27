@@ -21,7 +21,7 @@ In order to provide reliable, tested and stable firmware, we auto generate the l
 
 ![Flash Custom Firmware](/assets/qgroundcontrol-firmware.png)
 
-5. **RESTART** QGroundControl.
+5. **RESTART** QGroundControl by closing and reopening it.
 
 6. Open the "Vehicle Setup" (as described in step 2) and go to menu "Airframe" and depending the drone frame configuration select your drone name on the list of frames, and finally click on the button "Apply and Restart". *For example*: `platypus` is a "Octorotor Coaxial", select the frame group for "Octorotor Coaxial" and from the dropdown menu select "EOLab Platypus".
 

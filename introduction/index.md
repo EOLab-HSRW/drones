@@ -11,10 +11,11 @@ This documentation is designed for three types of readers/users, and makes a **s
 
 ## The Cores
 
-The following section is purely informative, and is intended to point out the projects that are at the core of our drones. Depending on the type of reader/user you are, you should be familiar with them.
+The following section is purely informative, and is intended to point out the projects that are at the core of our drones.
 
-Hardware core (for Operator/Pilots, Developers and Maintainers): [Pixhawk](https://pixhawk.org/) is defined as **Open (Hardware) Standard**: "Pixhawk open standards provides readily available hardware specifications and guidelines for drone systems development".
+Operators/Pilots, Developers, and Maintainers should each be familiar with the following projects, with the expected depth of knowledge varying by the type of reader/user you are.
 
-Software core: [PX4](https://px4.io/) "Open Source Autopilot". Why PX4 ? TBA
+**Hardware core**: [Pixhawk](https://pixhawk.org/) is defined as an **open hardware standard**, “Pixhawk open standards provide readily available hardware specifications and guidelines for drone systems development.” In all of our self-built drones, the **flight controller** is either fully **Pixhawk compliant**—for example, the Holybro Pixhawk v6c in [Pegasus](/pegasus)—or compatible with Pixhawk but not fully compliant. An example of the latter is [Protoflyer](/protoflyer), which uses the “Cube Black by Hex” flight controller. This controller does not follow the ["Pixhawk Autopilot Bus (PAB) Standard (DS-010)"](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf), making it vendor-locked to “The Cube” family produced by Hex.
 
-Application core: [ROS](https://www.ros.org/).... TBA
+**Software core**: [PX4](https://px4.io/), an **open-source autopilot**. Given the foundation of an open hardware standard, Pixhawk, the two popular options in this space are **PX4** and [**ArduPilot**](https://ardupilot.org/). We have an opinionated inclination toward PX4 (see [Autopilots](/maintainers/design/autopilots) for details); therefore, all of our self-built drones run PX4. However, we truly acknowledge and admire the ArduPilot ecosystem.
+**Application core**, for developers and maintainers: [ROS](https://www.ros.org/), the **Robot Operating System**. ROS provides the application-layer framework used to build, integrate, and operate higher-level robotics software around the drone. While PX4 is responsible for low-level flight control, stabilization, and vehicle-specific behavior, ROS is used for application-level capabilities such as autonomy, perception, simulation and interaction with external systems. Developers and maintainers working on this layer should be fluent in the ROS ecosystem.
