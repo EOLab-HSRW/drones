@@ -67,6 +67,8 @@ export default withMermaid({
           collapsed: true,
           items: [
             { text: 'Multi-Drone Sim', link: '/technical-articles/larasim2025'},
+            { text: 'Tethered Systems', link: '/technical-articles/tethered-systems'},
+            { text: 'Companion Computers', link: '/technical-articles/companion-computers'},
           ]
         }]
       },
